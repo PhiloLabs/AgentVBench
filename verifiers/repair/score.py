@@ -96,13 +96,38 @@ _GROUND_TRUTH = _HERE / "ground_truth"
 # ----------------------------------------------------------------------------- #
 
 
-def _task_id_to_cell(task_id: str) -> str | None:
-    """`bench-broken-cut-v1-s1` -> `v1/s1`. Returns None if unrecognized."""
-    import re
-    if task_id.startswith("verify-"):
-        task_id = task_id[len("verify-"):]
-    m = re.match(r"^bench-broken-cut-(v\d+)-(s\d+)$", task_id)
-    return f"{m.group(1)}/{m.group(2)}" if m else None
+def _resolve_cell_from_dataset(dataset: str, task_id: int) -> str | None:
+    """Look up the repair `cell` (e.g. ``"v1/s1"``) for a given int task_id.
+
+    The compact AgenticVBench_100 schema stores the cell in the `rubric_json`
+    column as ``{"cell": "v1/s1"}``.
+    """
+    p = Path(dataset)
+    if p.exists() and p.suffix == ".parquet":
+        import pyarrow.parquet as pq
+        tbl = pq.read_table(p, columns=["task_id", "task_family", "rubric_json"])
+    elif p.is_dir():
+        candidate = p / "data" / "train-00000-of-00001.parquet"
+        if not candidate.exists():
+            return None
+        import pyarrow.parquet as pq
+        tbl = pq.read_table(candidate, columns=["task_id", "task_family", "rubric_json"])
+    else:
+        from datasets import load_dataset
+        ds = load_dataset(dataset, split="train")
+        for row in ds:
+            if row.get("task_family") == "repair" and int(row["task_id"]) == int(task_id):
+                spec = json.loads(row["rubric_json"])
+                return spec.get("cell")
+        return None
+
+    ids = tbl.column("task_id").to_pylist()
+    fams = tbl.column("task_family").to_pylist()
+    rubrics = tbl.column("rubric_json").to_pylist()
+    for i, (fam, tid) in enumerate(zip(fams, ids)):
+        if fam == "repair" and int(tid) == int(task_id):
+            return json.loads(rubrics[i]).get("cell")
+    return None
 
 
 def _load_cell_meta(cell_id: str) -> dict | None:
@@ -185,7 +210,8 @@ def score_task(
     fixed_mp4: Path | str,
     report_md: Path | str,
     source_mp4: Path | str,
-    task_id: str,
+    cell: str,
+    task_id: int | str = 0,
 ) -> RepairResult:
     """Score one broken-video repair instance.
 
@@ -198,22 +224,24 @@ def score_task(
     source_mp4 : Path
         The original (verifier-only) source video for this cell, fetched from
         the dataset's ``verifier_reference_urls``.
-    task_id : str
-        e.g. ``"bench-broken-cut-v1-s1"``.
+    cell : str
+        Repair cell identifier, e.g. ``"v1/s1"``. Carried in
+        ``rubric_json`` on the dataset; the CLI resolves this for you.
+    task_id : int, optional
+        Carried through to the result for traceability.
     """
     fixed_p = Path(fixed_mp4)
     report_p = Path(report_md)
     source_p = Path(source_mp4)
 
-    cell = _task_id_to_cell(task_id)
-    if cell is None:
+    if not cell:
         return RepairResult(
-            task_id=task_id, cell="", variant="",
+            task_id=str(task_id), cell="", variant="",
             format_score=0.0, format_max=5.0,
             localization_score=0.0, localization_max=35.0,
             edit_score=0.0, edit_max=60.0,
             final_score=0.0,
-            error=f"unrecognized task_id {task_id!r}",
+            error="cell not provided",
         )
     cell_meta = _load_cell_meta(cell)
     if cell_meta is None:
@@ -232,7 +260,7 @@ def score_task(
         profile_path = _HERE / cell_meta["profile_path"]
     if not profile_path.exists():
         return RepairResult(
-            task_id=task_id, cell=cell, variant=variant,
+            task_id=str(task_id), cell=cell, variant=variant,
             format_score=0.0, format_max=5.0,
             localization_score=0.0, localization_max=35.0,
             edit_score=0.0, edit_max=60.0,
@@ -243,7 +271,7 @@ def score_task(
         profile = json.loads(profile_path.read_text())
     except (OSError, json.JSONDecodeError) as e:
         return RepairResult(
-            task_id=task_id, cell=cell, variant=variant,
+            task_id=str(task_id), cell=cell, variant=variant,
             format_score=0.0, format_max=5.0,
             localization_score=0.0, localization_max=35.0,
             edit_score=0.0, edit_max=60.0,
@@ -256,7 +284,7 @@ def score_task(
         from rubrics import score_format, score_edit  # type: ignore[import-not-found]
     except ImportError as e:
         return RepairResult(
-            task_id=task_id, cell=cell, variant=variant,
+            task_id=str(task_id), cell=cell, variant=variant,
             format_score=0.0, format_max=5.0,
             localization_score=0.0, localization_max=35.0,
             edit_score=0.0, edit_max=60.0,
@@ -315,7 +343,7 @@ def score_task(
     )
 
     return RepairResult(
-        task_id=task_id,
+        task_id=str(task_id),
         cell=cell,
         variant=variant,
         format_score=fmt_norm,
@@ -346,14 +374,26 @@ def cli(argv: list[str] | None = None) -> int:
     p.add_argument("--source-mp4", required=True, type=Path,
                    help="path to the verifier-only source.mp4 for this cell "
                         "(see verifier_reference_urls in the dataset)")
-    p.add_argument("--task-id", required=True,
-                   help="task_id, e.g. 'bench-broken-cut-v1-s1'")
+    p.add_argument("--task-id", required=True, type=int,
+                   help="task_id (repair range: 65..82)")
+    p.add_argument("--cell", default=None,
+                   help="optional: pass repair cell directly (e.g. 'v1/s1') "
+                        "to bypass dataset lookup")
+    p.add_argument("--dataset", default="Anonymous47621123/AgenticVBench_100",
+                   help="HF dataset id or local parquet/dir path "
+                        "(used to resolve --task-id → cell)")
     args = p.parse_args(argv)
+
+    cell = args.cell or _resolve_cell_from_dataset(args.dataset, args.task_id)
+    if cell is None:
+        print(json.dumps({"error": f"could not resolve cell for task_id={args.task_id}"}))
+        return 1
 
     res = score_task(
         fixed_mp4=args.fixed_mp4,
         report_md=args.report_md,
         source_mp4=args.source_mp4,
+        cell=cell,
         task_id=args.task_id,
     )
     print(res.to_json())

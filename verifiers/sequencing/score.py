@@ -226,36 +226,40 @@ def score_task(
 # ----------------------------------------------------------------------------- #
 
 
-def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[str]:
+def _load_correct_order_from_dataset(dataset: str, task_id: int) -> list[str]:
     """Look up `correct_order` for a given task_id from a parquet path or HF id.
 
-    The unified AgenticVBench_100 parquet has a `task_family` column; we filter
-    on `task_family == "sequencing"` AND `task_id`.
+    The compact AgenticVBench_100 parquet has 6 columns; family-specific data
+    is in the `rubric_json` string column. For sequencing tasks, the JSON
+    contains ``{"correct_order": [...], "n_slots": N, "provenance": ...}``.
     """
+    import json
     p = Path(dataset)
     if p.exists() and p.suffix == ".parquet":
         import pyarrow.parquet as pq
-        tbl = pq.read_table(p, columns=["task_family", "task_id", "correct_order"])
+        tbl = pq.read_table(p, columns=["task_id", "task_family", "rubric_json"])
     elif p.is_dir():
         candidate = p / "data" / "train-00000-of-00001.parquet"
         if not candidate.exists():
             raise FileNotFoundError(f"no parquet at {candidate}")
         import pyarrow.parquet as pq
-        tbl = pq.read_table(candidate, columns=["task_family", "task_id", "correct_order"])
+        tbl = pq.read_table(candidate, columns=["task_id", "task_family", "rubric_json"])
     else:
         from datasets import load_dataset
         ds = load_dataset(dataset, split="train")
         for row in ds:
-            if row.get("task_family") == "sequencing" and str(row["task_id"]) == str(task_id):
-                return [str(x) for x in row["correct_order"]]
+            if row.get("task_family") == "sequencing" and int(row["task_id"]) == int(task_id):
+                spec = json.loads(row["rubric_json"])
+                return [str(x) for x in spec["correct_order"]]
         raise KeyError(f"sequencing/task_id={task_id} not found in {dataset}")
 
+    ids = tbl.column("task_id").to_pylist()
     families = tbl.column("task_family").to_pylist()
-    ids = [str(x) for x in tbl.column("task_id").to_pylist()]
-    correct = tbl.column("correct_order").to_pylist()
+    rubrics = tbl.column("rubric_json").to_pylist()
     for i, (fam, tid) in enumerate(zip(families, ids)):
-        if fam == "sequencing" and tid == str(task_id):
-            return [str(x) for x in correct[i]]
+        if fam == "sequencing" and int(tid) == int(task_id):
+            spec = json.loads(rubrics[i])
+            return [str(x) for x in spec["correct_order"]]
     raise KeyError(f"sequencing/task_id={task_id} not in dataset")
 
 
@@ -266,8 +270,8 @@ def cli(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
-    p.add_argument("--task-id", required=True,
-                   help="task_id within sequencing (1..28)")
+    p.add_argument("--task-id", required=True, type=int,
+                   help="task_id (sequencing range: 37..64)")
     p.add_argument("--dataset", default="Anonymous47621123/AgenticVBench_100",
                    help="HF dataset id (default: Anonymous47621123/AgenticVBench_100), "
                         "or a local parquet/dir path")

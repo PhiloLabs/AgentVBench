@@ -7,12 +7,12 @@ writing a manifest by hand.
 ## sequencing
 
 `perfect_solution.json` is constructed from the dataset's
-`correct_order` for `task_id=2` (The Snowflake Discovery, 13 clips). Score it:
+`correct_order` for `task_id=37` (The Snowflake Discovery, 13 clips). Score it:
 
 ```bash
 avb-score-sequencing \
     --solution-json examples/sequencing/perfect_solution.json \
-    --task-id 2
+    --task-id 37
 ```
 
 Expected:

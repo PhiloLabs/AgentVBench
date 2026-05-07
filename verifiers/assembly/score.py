@@ -189,32 +189,39 @@ def score_task(
 # ----------------------------------------------------------------------------- #
 
 
-def _load_correct_assembly_from_dataset(dataset: str, task_id: int | str) -> list[str]:
-    """Look up `correct_assembly_in_slot_order` for `task_id` (assembly family)."""
+def _load_correct_assembly_from_dataset(dataset: str, task_id: int) -> list[str]:
+    """Look up `correct_assembly_in_slot_order` for `task_id` (assembly family).
+
+    Reads `rubric_json` from the compact AgenticVBench_100 schema. For assembly
+    tasks, the JSON contains ``{"correct_assembly_in_slot_order": [...], ...}``.
+    """
+    import json
     p = Path(dataset)
     if p.exists() and p.suffix == ".parquet":
         import pyarrow.parquet as pq
-        tbl = pq.read_table(p, columns=["task_family", "task_id", "correct_assembly_in_slot_order"])
+        tbl = pq.read_table(p, columns=["task_id", "task_family", "rubric_json"])
     elif p.is_dir():
         candidate = p / "data" / "train-00000-of-00001.parquet"
         if not candidate.exists():
             raise FileNotFoundError(f"no parquet at {candidate}")
         import pyarrow.parquet as pq
-        tbl = pq.read_table(candidate, columns=["task_family", "task_id", "correct_assembly_in_slot_order"])
+        tbl = pq.read_table(candidate, columns=["task_id", "task_family", "rubric_json"])
     else:
         from datasets import load_dataset
         ds = load_dataset(dataset, split="train")
         for row in ds:
-            if row.get("task_family") == "assembly" and str(row["task_id"]) == str(task_id):
-                return [str(x) for x in row["correct_assembly_in_slot_order"]]
+            if row.get("task_family") == "assembly" and int(row["task_id"]) == int(task_id):
+                spec = json.loads(row["rubric_json"])
+                return [str(x) for x in spec["correct_assembly_in_slot_order"]]
         raise KeyError(f"assembly/task_id={task_id} not found in {dataset}")
 
+    ids = tbl.column("task_id").to_pylist()
     families = tbl.column("task_family").to_pylist()
-    ids = [str(x) for x in tbl.column("task_id").to_pylist()]
-    arr = tbl.column("correct_assembly_in_slot_order").to_pylist()
+    rubrics = tbl.column("rubric_json").to_pylist()
     for i, (fam, tid) in enumerate(zip(families, ids)):
-        if fam == "assembly" and tid == str(task_id):
-            return [str(x) for x in arr[i]]
+        if fam == "assembly" and int(tid) == int(task_id):
+            spec = json.loads(rubrics[i])
+            return [str(x) for x in spec["correct_assembly_in_slot_order"]]
     raise KeyError(f"assembly/task_id={task_id} not in dataset")
 
 
@@ -225,9 +232,8 @@ def cli(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
-    p.add_argument("--task-id", required=True,
-                   help="task_id within assembly (one of 1, 2, 4, 5, 6, 7, 9, "
-                        "10, 11, 12, 13, 14, 15, 18, 19, 20, 22, 24)")
+    p.add_argument("--task-id", required=True, type=int,
+                   help="task_id (assembly range: 83..100)")
     p.add_argument("--dataset", default="Anonymous47621123/AgenticVBench_100",
                    help="HF dataset id (default: Anonymous47621123/AgenticVBench_100), "
                         "or a local parquet/dir path")
