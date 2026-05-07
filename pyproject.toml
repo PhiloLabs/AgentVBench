@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agenticvbench"
-version = "0.1.0"
-description = "Verifiers for the AgenticVBench benchmark — 100 video-production agent tasks across 4 task families."
+version = "0.2.0"
+description = "Verifiers for three families of the AgenticVBench benchmark (sequencing, repair, assembly). The recap grader is released separately."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -20,19 +20,16 @@ classifiers = [
 ]
 
 dependencies = [
-  "datasets>=2.16",      # for loading the AgentVBench_100 HF configs
+  "datasets>=2.16",      # for loading the AgenticVBench_100 HF dataset
   "pyarrow>=14",
   "requests>=2.31",
 ]
 
 [project.optional-dependencies]
-# recap requires the Gemini File API for LLM-judge rubric items
-recap = ["google-genai>=0.3"]
-# repair uses ffprobe via subprocess; OpenCV/SciPy used by some
-# of the kit's signal-processing rubrics (xcorr, SSIM)
+# repair uses ffprobe via subprocess; OpenCV / NumPy / SciPy power the kit's
+# signal-processing rubrics (SSIM, dhash, audio xcorr)
 repair = ["numpy>=1.24", "opencv-python>=4.8", "scipy>=1.11"]
 all = [
-  "google-genai>=0.3",
   "numpy>=1.24",
   "opencv-python>=4.8",
   "scipy>=1.11",
@@ -40,9 +37,8 @@ all = [
 
 [project.scripts]
 avb-score-sequencing = "verifiers.sequencing.score:cli"
-avb-score-assembly = "verifiers.assembly.score:cli"
-avb-score-recap = "verifiers.recap.score:cli"
 avb-score-repair = "verifiers.repair.score:cli"
+avb-score-assembly = "verifiers.assembly.score:cli"
 
 [tool.setuptools.packages.find]
 where = ["."]

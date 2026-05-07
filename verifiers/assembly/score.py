@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / assembly — video assembly.
+"""Verifier for AgenticVBench_100 / assembly — video assembly.
 
 Given:
   - the agent's `solution.json` (a manifest with a `segments` list, each entry
@@ -33,7 +33,7 @@ CLI:
     python -m verifiers.assembly.score \
         --solution-json path/to/solution.json \
         --task-id 1 \
-        --dataset Anonymous47621123/AgentVBench_100
+        --dataset Anonymous47621123/AgenticVBench_100
 
 The CLI reads `correct_assembly_in_slot_order` from the dataset for the given
 `task_id`.
@@ -221,15 +221,15 @@ def _load_correct_assembly_from_dataset(dataset: str, task_id: int | str) -> lis
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
         prog="avb-score-assembly",
-        description="Score one AgentVBench_100/assembly video-assembly solution.",
+        description="Score one AgenticVBench_100/assembly video-assembly solution.",
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
     p.add_argument("--task-id", required=True,
                    help="task_id within assembly (one of 1, 2, 4, 5, 6, 7, 9, "
                         "10, 11, 12, 13, 14, 15, 18, 19, 20, 22, 24)")
-    p.add_argument("--dataset", default="Anonymous47621123/AgentVBench_100",
-                   help="HF dataset id (default: Anonymous47621123/AgentVBench_100), "
+    p.add_argument("--dataset", default="Anonymous47621123/AgenticVBench_100",
+                   help="HF dataset id (default: Anonymous47621123/AgenticVBench_100), "
                         "or a local parquet/dir path")
     p.add_argument("--correct-assembly", default=None,
                    help="bypass dataset lookup; comma-separated golden picks, "

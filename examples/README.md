@@ -1,8 +1,8 @@
 # Examples
 
-Sample solution files for the simple-scorer tasks (sequencing, assembly) so you
-can run the CLIs end-to-end against the real dataset without writing a
-manifest by hand.
+Sample solution files for the simple-scorer tasks (sequencing, assembly)
+so you can run the CLIs end-to-end against the real dataset without
+writing a manifest by hand.
 
 ## sequencing
 
@@ -43,9 +43,8 @@ avb-score-assembly \
 
 (or omit `--correct-assembly` to look up from the dataset).
 
-## recap and repair
+## repair
 
-These tasks score against a video file (`final.mp4` / `fixed.mp4`), so we
-don't ship sample solutions in this repo (would inflate the tree by
-hundreds of MB). To score one, produce the agent's output yourself or
-download a sample run from the dataset's companion artifact bundle (TBD).
+The repair verifier scores against a video file (`fixed.mp4` + `report.md`),
+so we don't ship a sample solution in this repo (it would inflate the
+tree). To score one, produce the agent's output yourself.

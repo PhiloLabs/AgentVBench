@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / repair — broken-video repair.
+"""Verifier for AgenticVBench_100 / repair — broken-video repair.
 
 Each cell of the benchmark gives the agent a `broken.mp4` containing one or
 more defects (frozen scene, scene swap, color shift, audio noise, duplicate
@@ -55,7 +55,7 @@ REQUIREMENTS
 SOURCE VIDEO ACCESS
 -------------------
 The source.mp4 is hosted alongside the dataset at
-``Anonymous47621123/AgentVBench_100`` under each repair cell (column
+``Anonymous47621123/AgenticVBench_100`` under each repair cell (column
 ``verifier_reference_urls`` on the parquet — exactly one source per cell).
 Reviewers can download it ahead of time; the scorer expects it as a local
 path. To avoid leaking the answer to evaluated agents, the agent's runtime
@@ -337,7 +337,7 @@ def score_task(
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
         prog="avb-score-repair",
-        description="Score one AgentVBench_100/repair broken-video repair solution.",
+        description="Score one AgenticVBench_100/repair broken-video repair solution.",
     )
     p.add_argument("--fixed-mp4", required=True, type=Path,
                    help="path to the agent's fixed.mp4")

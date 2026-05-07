@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / sequencing — video ordering.
+"""Verifier for AgenticVBench_100 / sequencing — video ordering.
 
 Given:
   - the agent's `solution.json` (a manifest with a `segments` list, each entry
@@ -37,7 +37,7 @@ CLI:
     python -m verifiers.sequencing.score \
         --solution-json path/to/solution.json \
         --task-id 2 \
-        --dataset Anonymous47621123/AgentVBench_100  # or a local parquet path
+        --dataset Anonymous47621123/AgenticVBench_100  # or a local parquet path
 
 The CLI reads `correct_order` from the dataset for the given `task_id`.
 
@@ -229,7 +229,7 @@ def score_task(
 def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[str]:
     """Look up `correct_order` for a given task_id from a parquet path or HF id.
 
-    The unified AgentVBench_100 parquet has a `task_family` column; we filter
+    The unified AgenticVBench_100 parquet has a `task_family` column; we filter
     on `task_family == "sequencing"` AND `task_id`.
     """
     p = Path(dataset)
@@ -262,14 +262,14 @@ def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[s
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
         prog="avb-score-sequencing",
-        description="Score one AgentVBench_100/sequencing video-ordering solution.",
+        description="Score one AgenticVBench_100/sequencing video-ordering solution.",
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
     p.add_argument("--task-id", required=True,
                    help="task_id within sequencing (1..28)")
-    p.add_argument("--dataset", default="Anonymous47621123/AgentVBench_100",
-                   help="HF dataset id (default: Anonymous47621123/AgentVBench_100), "
+    p.add_argument("--dataset", default="Anonymous47621123/AgenticVBench_100",
+                   help="HF dataset id (default: Anonymous47621123/AgenticVBench_100), "
                         "or a local parquet/dir path")
     p.add_argument("--correct-order", default=None,
                    help="bypass dataset lookup; comma-separated golden order, "
