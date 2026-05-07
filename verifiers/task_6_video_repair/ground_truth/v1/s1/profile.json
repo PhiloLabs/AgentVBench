@@ -1,0 +1,755 @@
+{
+  "source_file": "v1_source.mp4",
+  "format": {
+    "resolution": {
+      "w": 1920,
+      "h": 1080
+    },
+    "framerate": 59.94,
+    "duration_s": 91.996,
+    "codec": "h264",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "pix_fmt": "yuv420p",
+    "aspect_ratio": "16:9",
+    "bitrate_bps": 2038402,
+    "nb_frames": 5513
+  },
+  "visual": {
+    "shot_boundaries_s": [
+      0.0,
+      4.5045,
+      6.339666,
+      8.425083,
+      11.594916,
+      13.513499,
+      15.031683,
+      16.199516,
+      17.450766,
+      19.152466,
+      21.654966,
+      24.290932,
+      25.125099,
+      26.926899,
+      28.378349,
+      30.714015,
+      33.016315,
+      35.101731,
+      35.935898,
+      39.105731,
+      41.741698,
+      43.660281,
+      47.781064,
+      48.998947,
+      54.92153,
+      58.057997,
+      59.77638,
+      60.143414,
+      60.97758,
+      61.22783,
+      63.563497,
+      65.865797,
+      68.668596,
+      71.755013,
+      75.542129,
+      76.342929,
+      77.093679,
+      77.343929,
+      78.928846,
+      82.348929,
+      88.588495,
+      91.891795
+    ],
+    "sharpness_range": [
+      1.09,
+      58.66
+    ],
+    "luminance_range": [
+      0.04,
+      250.75
+    ],
+    "motion_range": [
+      0.0,
+      7.41
+    ]
+  },
+  "narrative": {
+    "scene_count": 42,
+    "scene_list": [
+      {
+        "index": 0,
+        "start_s": 0.0,
+        "end_s": 4.5045,
+        "duration_s": 4.5045,
+        "sharpness": 13.18,
+        "luminance": 31.39,
+        "motion": 3.392,
+        "mean_rgb": [
+          39.23,
+          28.79,
+          23.97
+        ],
+        "phash": "f2e3e7702040d0c3"
+      },
+      {
+        "index": 1,
+        "start_s": 4.5045,
+        "end_s": 6.339666,
+        "duration_s": 1.835166,
+        "sharpness": 20.81,
+        "luminance": 35.53,
+        "motion": 3.215,
+        "mean_rgb": [
+          44.64,
+          31.69,
+          30.94
+        ],
+        "phash": "0c0e4e0e8cc4ac14"
+      },
+      {
+        "index": 2,
+        "start_s": 6.339666,
+        "end_s": 8.425083,
+        "duration_s": 2.085417,
+        "sharpness": 15.58,
+        "luminance": 58.34,
+        "motion": 4.183,
+        "mean_rgb": [
+          78.39,
+          52.83,
+          34.09
+        ],
+        "phash": "f5fe47422b018c84"
+      },
+      {
+        "index": 3,
+        "start_s": 8.425083,
+        "end_s": 11.594916,
+        "duration_s": 3.169833,
+        "sharpness": 8.13,
+        "luminance": 38.19,
+        "motion": 2.69,
+        "mean_rgb": [
+          47.34,
+          35.02,
+          29.88
+        ],
+        "phash": "373d761625f7a781"
+      },
+      {
+        "index": 4,
+        "start_s": 11.594916,
+        "end_s": 13.513499,
+        "duration_s": 1.918583,
+        "sharpness": 10.57,
+        "luminance": 33.33,
+        "motion": 2.901,
+        "mean_rgb": [
+          41.4,
+          29.97,
+          29.31
+        ],
+        "phash": "0b1f0b0c08080c00"
+      },
+      {
+        "index": 5,
+        "start_s": 13.513499,
+        "end_s": 15.031683,
+        "duration_s": 1.518184,
+        "sharpness": 5.2,
+        "luminance": 39.66,
+        "motion": 2.959,
+        "mean_rgb": [
+          48.68,
+          36.57,
+          31.43
+        ],
+        "phash": "1c162636361e6e70"
+      },
+      {
+        "index": 6,
+        "start_s": 15.031683,
+        "end_s": 16.199516,
+        "duration_s": 1.167833,
+        "sharpness": 9.6,
+        "luminance": 30.1,
+        "motion": 0.244,
+        "mean_rgb": [
+          38.26,
+          26.95,
+          24.65
+        ],
+        "phash": "2e2e634244c04828"
+      },
+      {
+        "index": 7,
+        "start_s": 16.199516,
+        "end_s": 17.450766,
+        "duration_s": 1.25125,
+        "sharpness": 9.06,
+        "luminance": 21.03,
+        "motion": 1.535,
+        "mean_rgb": [
+          28.01,
+          17.8,
+          19.24
+        ],
+        "phash": "1810101814332f8f"
+      },
+      {
+        "index": 8,
+        "start_s": 17.450766,
+        "end_s": 19.152466,
+        "duration_s": 1.7017,
+        "sharpness": 5.32,
+        "luminance": 36.87,
+        "motion": 2.206,
+        "mean_rgb": [
+          45.41,
+          34.02,
+          28.62
+        ],
+        "phash": "0c2436263e3eb4f0"
+      },
+      {
+        "index": 9,
+        "start_s": 19.152466,
+        "end_s": 21.654966,
+        "duration_s": 2.5025,
+        "sharpness": 11.61,
+        "luminance": 28.32,
+        "motion": 0.468,
+        "mean_rgb": [
+          37.31,
+          24.99,
+          21.49
+        ],
+        "phash": "262706cac0c4683c"
+      },
+      {
+        "index": 10,
+        "start_s": 21.654966,
+        "end_s": 24.290932,
+        "duration_s": 2.635966,
+        "sharpness": 5.84,
+        "luminance": 35.89,
+        "motion": 1.153,
+        "mean_rgb": [
+          44.18,
+          33.09,
+          28.15
+        ],
+        "phash": "1e32323b2f2e7670"
+      },
+      {
+        "index": 11,
+        "start_s": 24.290932,
+        "end_s": 25.125099,
+        "duration_s": 0.834167,
+        "sharpness": 9.69,
+        "luminance": 20.3,
+        "motion": 0.17,
+        "mean_rgb": [
+          28.05,
+          16.82,
+          17.32
+        ],
+        "phash": "1c1d1c1c1058002c"
+      },
+      {
+        "index": 12,
+        "start_s": 25.125099,
+        "end_s": 26.926899,
+        "duration_s": 1.8018,
+        "sharpness": 4.76,
+        "luminance": 30.55,
+        "motion": 3.179,
+        "mean_rgb": [
+          40.52,
+          26.54,
+          24.69
+        ],
+        "phash": "000003673e1c9c10"
+      },
+      {
+        "index": 13,
+        "start_s": 26.926899,
+        "end_s": 28.378349,
+        "duration_s": 1.45145,
+        "sharpness": 18.11,
+        "luminance": 36.21,
+        "motion": 2.521,
+        "mean_rgb": [
+          46.11,
+          32.78,
+          27.43
+        ],
+        "phash": "00e212d2d2909a0a"
+      },
+      {
+        "index": 14,
+        "start_s": 28.378349,
+        "end_s": 30.714015,
+        "duration_s": 2.335666,
+        "sharpness": 6.5,
+        "luminance": 30.95,
+        "motion": 5.244,
+        "mean_rgb": [
+          39.71,
+          27.54,
+          25.09
+        ],
+        "phash": "0008044c59781cf8"
+      },
+      {
+        "index": 15,
+        "start_s": 30.714015,
+        "end_s": 33.016315,
+        "duration_s": 2.3023,
+        "sharpness": 11.64,
+        "luminance": 18.89,
+        "motion": 0.945,
+        "mean_rgb": [
+          25.28,
+          16.39,
+          14.98
+        ],
+        "phash": "040c6e0c10180000"
+      },
+      {
+        "index": 16,
+        "start_s": 33.016315,
+        "end_s": 35.101731,
+        "duration_s": 2.085416,
+        "sharpness": 5.26,
+        "luminance": 29.9,
+        "motion": 2.096,
+        "mean_rgb": [
+          37.83,
+          27.16,
+          22.73
+        ],
+        "phash": "0000507078b29130"
+      },
+      {
+        "index": 17,
+        "start_s": 35.101731,
+        "end_s": 35.935898,
+        "duration_s": 0.834167,
+        "sharpness": 7.48,
+        "luminance": 20.58,
+        "motion": 1.659,
+        "mean_rgb": [
+          28.34,
+          17.18,
+          17.58
+        ],
+        "phash": "08002031302c362e"
+      },
+      {
+        "index": 18,
+        "start_s": 35.935898,
+        "end_s": 39.105731,
+        "duration_s": 3.169833,
+        "sharpness": 13.11,
+        "luminance": 15.0,
+        "motion": 0.488,
+        "mean_rgb": [
+          22.49,
+          12.3,
+          8.63
+        ],
+        "phash": "3c3c381830101800"
+      },
+      {
+        "index": 19,
+        "start_s": 39.105731,
+        "end_s": 41.741698,
+        "duration_s": 2.635967,
+        "sharpness": 4.94,
+        "luminance": 36.12,
+        "motion": 2.145,
+        "mean_rgb": [
+          45.53,
+          32.65,
+          28.75
+        ],
+        "phash": "0030181898c89cf8"
+      },
+      {
+        "index": 20,
+        "start_s": 41.741698,
+        "end_s": 43.660281,
+        "duration_s": 1.918583,
+        "sharpness": 5.65,
+        "luminance": 30.25,
+        "motion": 0.659,
+        "mean_rgb": [
+          38.52,
+          27.26,
+          23.1
+        ],
+        "phash": "fe6e7e02021c0400"
+      },
+      {
+        "index": 21,
+        "start_s": 43.660281,
+        "end_s": 47.781064,
+        "duration_s": 4.120783,
+        "sharpness": 8.54,
+        "luminance": 25.26,
+        "motion": 0.901,
+        "mean_rgb": [
+          37.61,
+          20.06,
+          19.46
+        ],
+        "phash": "30181c2062313839"
+      },
+      {
+        "index": 22,
+        "start_s": 47.781064,
+        "end_s": 48.998947,
+        "duration_s": 1.217883,
+        "sharpness": 12.64,
+        "luminance": 32.01,
+        "motion": 1.198,
+        "mean_rgb": [
+          39.56,
+          29.02,
+          27.17
+        ],
+        "phash": "6878781c7f7d1230"
+      },
+      {
+        "index": 23,
+        "start_s": 48.998947,
+        "end_s": 54.92153,
+        "duration_s": 5.922583,
+        "sharpness": 36.74,
+        "luminance": 29.45,
+        "motion": 1.789,
+        "mean_rgb": [
+          36.53,
+          26.87,
+          24.24
+        ],
+        "phash": "16343210181838b0"
+      },
+      {
+        "index": 24,
+        "start_s": 54.92153,
+        "end_s": 58.057997,
+        "duration_s": 3.136467,
+        "sharpness": 47.05,
+        "luminance": 250.75,
+        "motion": 0.141,
+        "mean_rgb": [
+          252.3,
+          250.48,
+          249.69
+        ],
+        "phash": "0000000000000000"
+      },
+      {
+        "index": 25,
+        "start_s": 58.057997,
+        "end_s": 59.77638,
+        "duration_s": 1.718383,
+        "sharpness": 14.03,
+        "luminance": 61.81,
+        "motion": 7.41,
+        "mean_rgb": [
+          80.82,
+          54.62,
+          48.74
+        ],
+        "phash": "1919839393838380"
+      },
+      {
+        "index": 26,
+        "start_s": 59.77638,
+        "end_s": 60.143414,
+        "duration_s": 0.367034,
+        "sharpness": 21.47,
+        "luminance": 100.89,
+        "motion": 3.559,
+        "mean_rgb": [
+          119.47,
+          94.53,
+          85.0
+        ],
+        "phash": "272767230343a161"
+      },
+      {
+        "index": 27,
+        "start_s": 60.143414,
+        "end_s": 60.97758,
+        "duration_s": 0.834166,
+        "sharpness": 21.96,
+        "luminance": 112.39,
+        "motion": 4.791,
+        "mean_rgb": [
+          126.78,
+          108.07,
+          96.89
+        ],
+        "phash": "0fe7e7e7e1e1e1e1"
+      },
+      {
+        "index": 28,
+        "start_s": 60.97758,
+        "end_s": 61.22783,
+        "duration_s": 0.25025,
+        "sharpness": 16.5,
+        "luminance": 106.64,
+        "motion": 2.69,
+        "mean_rgb": [
+          121.12,
+          102.37,
+          90.62
+        ],
+        "phash": "c7c7c7c7c6d0c0d0"
+      },
+      {
+        "index": 29,
+        "start_s": 61.22783,
+        "end_s": 63.563497,
+        "duration_s": 2.335667,
+        "sharpness": 26.15,
+        "luminance": 105.49,
+        "motion": 4.983,
+        "mean_rgb": [
+          116.14,
+          101.67,
+          97.07
+        ],
+        "phash": "0c1cec7c5cdc7cff"
+      },
+      {
+        "index": 30,
+        "start_s": 63.563497,
+        "end_s": 65.865797,
+        "duration_s": 2.3023,
+        "sharpness": 58.66,
+        "luminance": 124.62,
+        "motion": 1.023,
+        "mean_rgb": [
+          140.57,
+          119.98,
+          106.52
+        ],
+        "phash": "e61e1914745f38dc"
+      },
+      {
+        "index": 31,
+        "start_s": 65.865797,
+        "end_s": 68.668596,
+        "duration_s": 2.802799,
+        "sharpness": 22.85,
+        "luminance": 120.29,
+        "motion": 3.05,
+        "mean_rgb": [
+          153.9,
+          108.42,
+          93.04
+        ],
+        "phash": "99bcf0f0f4a97c1c"
+      },
+      {
+        "index": 32,
+        "start_s": 68.668596,
+        "end_s": 71.755013,
+        "duration_s": 3.086417,
+        "sharpness": 18.96,
+        "luminance": 158.25,
+        "motion": 4.887,
+        "mean_rgb": [
+          181.57,
+          151.73,
+          130.51
+        ],
+        "phash": "1f0507236be99a8e"
+      },
+      {
+        "index": 33,
+        "start_s": 71.755013,
+        "end_s": 75.542129,
+        "duration_s": 3.787116,
+        "sharpness": 32.69,
+        "luminance": 167.85,
+        "motion": 1.923,
+        "mean_rgb": [
+          180.91,
+          164.41,
+          150.75
+        ],
+        "phash": "fffff78f25101801"
+      },
+      {
+        "index": 34,
+        "start_s": 75.542129,
+        "end_s": 76.342929,
+        "duration_s": 0.8008,
+        "sharpness": 11.28,
+        "luminance": 73.42,
+        "motion": 2.018,
+        "mean_rgb": [
+          91.01,
+          67.77,
+          56.4
+        ],
+        "phash": "383c38f8f0d00020"
+      },
+      {
+        "index": 35,
+        "start_s": 76.342929,
+        "end_s": 77.093679,
+        "duration_s": 0.75075,
+        "sharpness": 13.45,
+        "luminance": 94.73,
+        "motion": 3.504,
+        "mean_rgb": [
+          118.29,
+          86.48,
+          75.19
+        ],
+        "phash": "98380898a0c0c0d0"
+      },
+      {
+        "index": 36,
+        "start_s": 77.093679,
+        "end_s": 77.343929,
+        "duration_s": 0.25025,
+        "sharpness": 17.23,
+        "luminance": 180.22,
+        "motion": 2.749,
+        "mean_rgb": [
+          190.56,
+          176.53,
+          172.02
+        ],
+        "phash": "dfc7c7e3f3371f07"
+      },
+      {
+        "index": 37,
+        "start_s": 77.343929,
+        "end_s": 78.928846,
+        "duration_s": 1.584917,
+        "sharpness": 46.41,
+        "luminance": 104.48,
+        "motion": 1.185,
+        "mean_rgb": [
+          120.09,
+          98.81,
+          92.68
+        ],
+        "phash": "0040feff778c34a4"
+      },
+      {
+        "index": 38,
+        "start_s": 78.928846,
+        "end_s": 82.348929,
+        "duration_s": 3.420083,
+        "sharpness": 16.0,
+        "luminance": 102.47,
+        "motion": 4.88,
+        "mean_rgb": [
+          117.36,
+          97.42,
+          89.41
+        ],
+        "phash": "0f020e0e1e1e0a36"
+      },
+      {
+        "index": 39,
+        "start_s": 82.348929,
+        "end_s": 88.588495,
+        "duration_s": 6.239566,
+        "sharpness": 44.28,
+        "luminance": 87.21,
+        "motion": 2.225,
+        "mean_rgb": [
+          104.25,
+          81.13,
+          73.94
+        ],
+        "phash": "ef02ab0cef565696"
+      },
+      {
+        "index": 40,
+        "start_s": 88.588495,
+        "end_s": 91.891795,
+        "duration_s": 3.3033,
+        "sharpness": 46.12,
+        "luminance": 250.74,
+        "motion": 0.185,
+        "mean_rgb": [
+          252.29,
+          250.46,
+          249.68
+        ],
+        "phash": "0000000000000000"
+      },
+      {
+        "index": 41,
+        "start_s": 91.891795,
+        "end_s": 91.975212,
+        "duration_s": 0.083417,
+        "sharpness": 1.09,
+        "luminance": 0.04,
+        "motion": 0.0,
+        "mean_rgb": [
+          0.04,
+          0.04,
+          1.04
+        ],
+        "phash": "0000000000000000"
+      }
+    ]
+  },
+  "sound": {
+    "noise_floor_dbfs": -34.44,
+    "rms_db_p50": -15.57,
+    "rms_db_p95": -8.34,
+    "audio_duration_s": 92.011,
+    "integrated_lufs": -10.9,
+    "loudness_range_lu": 11.2,
+    "true_peak_dbfs": 1.5,
+    "sample_rate": 48000,
+    "channels": 2,
+    "codec": "aac"
+  },
+  "injection": {
+    "variant": "v01_frozen_scene",
+    "subtask": "v1_frozen_av",
+    "rng_seed": 0,
+    "mode": "frozen_av",
+    "freeze_audio": true,
+    "start_s": 22.0,
+    "end_s": 23.0,
+    "duration_s": 1.0,
+    "windows": [
+      {
+        "target_scene_index": 10,
+        "target_scene": {
+          "index": 10,
+          "start_s": 21.654966,
+          "end_s": 24.290932,
+          "duration_s": 2.635966
+        },
+        "insert_at_source_s": 22.0,
+        "start_s": 22.0,
+        "end_s": 23.0,
+        "duration_s": 1.0,
+        "frames": null
+      }
+    ],
+    "target_scene_index": 10,
+    "target_scene": {
+      "index": 10,
+      "start_s": 21.654966,
+      "end_s": 24.290932,
+      "duration_s": 2.635966
+    }
+  }
+}

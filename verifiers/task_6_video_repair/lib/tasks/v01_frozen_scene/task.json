@@ -1,0 +1,14 @@
+{
+  "id": "v01_frozen_scene",
+  "name": "Frozen Scene",
+  "description": "A scene freezes on a single frame (optionally with audio muted) for a short duration, then resumes.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5,
+    "w_out": 1.0
+  }
+}

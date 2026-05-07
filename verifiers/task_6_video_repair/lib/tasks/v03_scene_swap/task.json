@@ -1,0 +1,13 @@
+{
+  "id": "v03_scene_swap",
+  "name": "Scene Swap",
+  "description": "Two adjacent groups of consecutive scenes are swapped; both video and audio follow the new order.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5
+  }
+}

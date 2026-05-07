@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agenticvbench"
+version = "0.1.0"
+description = "Verifiers for the AgenticVBench benchmark — 100 video-production agent tasks across 4 task families."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Anonymous" }]
+keywords = ["benchmark", "evaluation", "video", "agents", "multimodal"]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+  "datasets>=2.16",      # for loading the AgentVBench_100 HF configs
+  "pyarrow>=14",
+  "requests>=2.31",
+]
+
+[project.optional-dependencies]
+# task_4 cutbench requires the Gemini File API for LLM-judge rubric items
+task4 = ["google-genai>=0.3"]
+# task_6 video repair uses ffprobe via subprocess; OpenCV/SciPy used by some
+# of the kit's signal-processing rubrics (xcorr, SSIM)
+task6 = ["numpy>=1.24", "opencv-python>=4.8", "scipy>=1.11"]
+all = [
+  "google-genai>=0.3",
+  "numpy>=1.24",
+  "opencv-python>=4.8",
+  "scipy>=1.11",
+]
+
+[project.scripts]
+avb-score-task-5 = "verifiers.task_5_video_order.score:cli"
+avb-score-task-7 = "verifiers.task_7_video_assembly.score:cli"
+avb-score-task-4 = "verifiers.task_4_cutbench.score:cli"
+avb-score-task-6 = "verifiers.task_6_video_repair.score:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["verifiers*"]

@@ -1,0 +1,10 @@
+{
+  "_comment": "Per-item tolerances for rubrics/format.py. `default` applies to every source; add a key under `per_source` (matched on source_mp4.stem) to override.",
+  "tolerances": {
+    "default": {
+      "duration_s": 0.05,
+      "fps": 0.02
+    },
+    "per_source": {}
+  }
+}

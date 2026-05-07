@@ -1,0 +1,774 @@
+{
+  "source_file": "v2_source.mp4",
+  "format": {
+    "resolution": {
+      "w": 1280,
+      "h": 720
+    },
+    "framerate": 50.0,
+    "duration_s": 235.0,
+    "codec": "h264",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "pix_fmt": "yuv420p",
+    "aspect_ratio": "16:9",
+    "bitrate_bps": 4709869,
+    "nb_frames": 11750
+  },
+  "visual": {
+    "shot_boundaries_s": [
+      0.0,
+      11.8,
+      15.32,
+      19.84,
+      23.16,
+      28.24,
+      32.76,
+      38.52,
+      43.2,
+      63.82,
+      64.38,
+      68.6,
+      72.56,
+      73.24,
+      78.26,
+      83.34,
+      86.04,
+      87.12,
+      99.58,
+      101.96,
+      104.08,
+      104.76,
+      118.4,
+      124.18,
+      125.62,
+      128.7,
+      143.46,
+      147.8,
+      148.44,
+      152.14,
+      156.46,
+      163.06,
+      170.26,
+      174.06,
+      176.06,
+      193.78,
+      200.88,
+      204.08,
+      209.72,
+      215.28,
+      219.98,
+      220.74,
+      225.36,
+      229.66
+    ],
+    "sharpness_range": [
+      260.09,
+      1213.31
+    ],
+    "luminance_range": [
+      68.62,
+      153.31
+    ],
+    "motion_range": [
+      0.573,
+      4.684
+    ]
+  },
+  "narrative": {
+    "scene_count": 44,
+    "scene_list": [
+      {
+        "index": 0,
+        "start_s": 0.0,
+        "end_s": 11.8,
+        "duration_s": 11.8,
+        "sharpness": 260.09,
+        "luminance": 124.97,
+        "motion": 3.387,
+        "mean_rgb": [
+          130.67,
+          121.07,
+          130.09
+        ],
+        "phash": "802064ff4dbfffff"
+      },
+      {
+        "index": 1,
+        "start_s": 11.8,
+        "end_s": 15.32,
+        "duration_s": 3.52,
+        "sharpness": 495.97,
+        "luminance": 122.55,
+        "motion": 2.748,
+        "mean_rgb": [
+          124.69,
+          123.72,
+          110.85
+        ],
+        "phash": "87f51d56bc7cf8f0"
+      },
+      {
+        "index": 2,
+        "start_s": 15.32,
+        "end_s": 19.84,
+        "duration_s": 4.52,
+        "sharpness": 333.2,
+        "luminance": 137.64,
+        "motion": 3.703,
+        "mean_rgb": [
+          141.15,
+          134.9,
+          142.43
+        ],
+        "phash": "ffff01004100f6eb"
+      },
+      {
+        "index": 3,
+        "start_s": 19.84,
+        "end_s": 23.16,
+        "duration_s": 3.32,
+        "sharpness": 483.15,
+        "luminance": 142.3,
+        "motion": 4.165,
+        "mean_rgb": [
+          136.93,
+          145.78,
+          138.36
+        ],
+        "phash": "ffff4080e00b0b00"
+      },
+      {
+        "index": 4,
+        "start_s": 23.16,
+        "end_s": 28.24,
+        "duration_s": 5.08,
+        "sharpness": 491.45,
+        "luminance": 125.28,
+        "motion": 3.175,
+        "mean_rgb": [
+          123.23,
+          126.38,
+          124.93
+        ],
+        "phash": "fe2000fe7c1f0001"
+      },
+      {
+        "index": 5,
+        "start_s": 28.24,
+        "end_s": 32.76,
+        "duration_s": 4.52,
+        "sharpness": 368.17,
+        "luminance": 153.31,
+        "motion": 4.666,
+        "mean_rgb": [
+          152.13,
+          156.08,
+          142.15
+        ],
+        "phash": "ff610b01c80280e0"
+      },
+      {
+        "index": 6,
+        "start_s": 32.76,
+        "end_s": 38.52,
+        "duration_s": 5.76,
+        "sharpness": 329.87,
+        "luminance": 126.46,
+        "motion": 4.684,
+        "mean_rgb": [
+          120.79,
+          130.2,
+          122.05
+        ],
+        "phash": "ffffdfe300000000"
+      },
+      {
+        "index": 7,
+        "start_s": 38.52,
+        "end_s": 43.2,
+        "duration_s": 4.68,
+        "sharpness": 314.73,
+        "luminance": 126.61,
+        "motion": 4.35,
+        "mean_rgb": [
+          131.88,
+          125.06,
+          120.65
+        ],
+        "phash": "fff3000600001000"
+      },
+      {
+        "index": 8,
+        "start_s": 43.2,
+        "end_s": 63.82,
+        "duration_s": 20.62,
+        "sharpness": 263.54,
+        "luminance": 83.97,
+        "motion": 2.796,
+        "mean_rgb": [
+          87.49,
+          81.35,
+          88.33
+        ],
+        "phash": "bf0e080c0023218c"
+      },
+      {
+        "index": 9,
+        "start_s": 63.82,
+        "end_s": 64.38,
+        "duration_s": 0.56,
+        "sharpness": 868.4,
+        "luminance": 68.62,
+        "motion": 1.487,
+        "mean_rgb": [
+          120.08,
+          46.55,
+          47.35
+        ],
+        "phash": "8080049818190103"
+      },
+      {
+        "index": 10,
+        "start_s": 64.38,
+        "end_s": 68.6,
+        "duration_s": 4.22,
+        "sharpness": 861.04,
+        "luminance": 101.64,
+        "motion": 4.174,
+        "mean_rgb": [
+          99.06,
+          102.91,
+          102.05
+        ],
+        "phash": "80007e46ca4b437f"
+      },
+      {
+        "index": 11,
+        "start_s": 68.6,
+        "end_s": 72.56,
+        "duration_s": 3.96,
+        "sharpness": 978.39,
+        "luminance": 151.08,
+        "motion": 2.358,
+        "mean_rgb": [
+          145.98,
+          153.28,
+          153.45
+        ],
+        "phash": "ff7e7e7e5e670000"
+      },
+      {
+        "index": 12,
+        "start_s": 72.56,
+        "end_s": 73.24,
+        "duration_s": 0.68,
+        "sharpness": 892.7,
+        "luminance": 97.16,
+        "motion": 3.073,
+        "mean_rgb": [
+          136.12,
+          80.81,
+          79.26
+        ],
+        "phash": "808004d818190503"
+      },
+      {
+        "index": 13,
+        "start_s": 73.24,
+        "end_s": 78.26,
+        "duration_s": 5.02,
+        "sharpness": 907.51,
+        "luminance": 123.35,
+        "motion": 3.559,
+        "mean_rgb": [
+          121.77,
+          126.28,
+          112.42
+        ],
+        "phash": "ff0000187e7e7b7f"
+      },
+      {
+        "index": 14,
+        "start_s": 78.26,
+        "end_s": 83.34,
+        "duration_s": 5.08,
+        "sharpness": 1011.74,
+        "luminance": 111.45,
+        "motion": 2.308,
+        "mean_rgb": [
+          113.18,
+          113.97,
+          93.81
+        ],
+        "phash": "85192004811f7f7f"
+      },
+      {
+        "index": 15,
+        "start_s": 83.34,
+        "end_s": 86.04,
+        "duration_s": 2.7,
+        "sharpness": 900.92,
+        "luminance": 114.62,
+        "motion": 2.96,
+        "mean_rgb": [
+          112.44,
+          116.28,
+          111.69
+        ],
+        "phash": "fa7f7e3f81020000"
+      },
+      {
+        "index": 16,
+        "start_s": 86.04,
+        "end_s": 87.12,
+        "duration_s": 1.08,
+        "sharpness": 846.48,
+        "luminance": 102.29,
+        "motion": 2.163,
+        "mean_rgb": [
+          106.11,
+          101.49,
+          96.56
+        ],
+        "phash": "ff756267837f6f49"
+      },
+      {
+        "index": 17,
+        "start_s": 87.12,
+        "end_s": 99.58,
+        "duration_s": 12.46,
+        "sharpness": 1015.14,
+        "luminance": 94.9,
+        "motion": 2.606,
+        "mean_rgb": [
+          105.52,
+          93.44,
+          74.55
+        ],
+        "phash": "90ec7d7f7f7f7f03"
+      },
+      {
+        "index": 18,
+        "start_s": 99.58,
+        "end_s": 101.96,
+        "duration_s": 2.38,
+        "sharpness": 767.88,
+        "luminance": 103.33,
+        "motion": 0.573,
+        "mean_rgb": [
+          111.43,
+          98.65,
+          106.14
+        ],
+        "phash": "ff200303ce084030"
+      },
+      {
+        "index": 19,
+        "start_s": 101.96,
+        "end_s": 104.08,
+        "duration_s": 2.12,
+        "sharpness": 1013.64,
+        "luminance": 103.44,
+        "motion": 2.176,
+        "mean_rgb": [
+          101.56,
+          106.57,
+          92.57
+        ],
+        "phash": "853f3f7ff77f7a70"
+      },
+      {
+        "index": 20,
+        "start_s": 104.08,
+        "end_s": 104.76,
+        "duration_s": 0.68,
+        "sharpness": 995.12,
+        "luminance": 77.6,
+        "motion": 2.06,
+        "mean_rgb": [
+          120.95,
+          59.62,
+          56.6
+        ],
+        "phash": "808004d818190103"
+      },
+      {
+        "index": 21,
+        "start_s": 104.76,
+        "end_s": 118.4,
+        "duration_s": 13.64,
+        "sharpness": 1142.22,
+        "luminance": 102.0,
+        "motion": 1.94,
+        "mean_rgb": [
+          100.6,
+          102.12,
+          105.19
+        ],
+        "phash": "fffc7d180024002e"
+      },
+      {
+        "index": 22,
+        "start_s": 118.4,
+        "end_s": 124.18,
+        "duration_s": 5.78,
+        "sharpness": 940.37,
+        "luminance": 103.67,
+        "motion": 2.379,
+        "mean_rgb": [
+          98.33,
+          106.18,
+          104.75
+        ],
+        "phash": "ff080f28f2145020"
+      },
+      {
+        "index": 23,
+        "start_s": 124.18,
+        "end_s": 125.62,
+        "duration_s": 1.44,
+        "sharpness": 845.79,
+        "luminance": 109.08,
+        "motion": 3.299,
+        "mean_rgb": [
+          111.01,
+          109.12,
+          104.18
+        ],
+        "phash": "ff7c77777c5e0045"
+      },
+      {
+        "index": 24,
+        "start_s": 125.62,
+        "end_s": 128.7,
+        "duration_s": 3.08,
+        "sharpness": 1000.57,
+        "luminance": 104.8,
+        "motion": 3.373,
+        "mean_rgb": [
+          124.66,
+          98.09,
+          87.2
+        ],
+        "phash": "8f7f7f7dcf130900"
+      },
+      {
+        "index": 25,
+        "start_s": 128.7,
+        "end_s": 143.46,
+        "duration_s": 14.76,
+        "sharpness": 889.79,
+        "luminance": 111.53,
+        "motion": 2.526,
+        "mean_rgb": [
+          110.89,
+          112.86,
+          106.19
+        ],
+        "phash": "fd7f7f5dfd7e7033"
+      },
+      {
+        "index": 26,
+        "start_s": 143.46,
+        "end_s": 147.8,
+        "duration_s": 4.34,
+        "sharpness": 1085.99,
+        "luminance": 128.7,
+        "motion": 2.892,
+        "mean_rgb": [
+          128.07,
+          129.46,
+          126.42
+        ],
+        "phash": "e77f030108004048"
+      },
+      {
+        "index": 27,
+        "start_s": 147.8,
+        "end_s": 148.44,
+        "duration_s": 0.64,
+        "sharpness": 935.3,
+        "luminance": 80.21,
+        "motion": 1.888,
+        "mean_rgb": [
+          126.05,
+          60.73,
+          60.42
+        ],
+        "phash": "808004d800190103"
+      },
+      {
+        "index": 28,
+        "start_s": 148.44,
+        "end_s": 152.14,
+        "duration_s": 3.7,
+        "sharpness": 814.51,
+        "luminance": 109.59,
+        "motion": 2.165,
+        "mean_rgb": [
+          109.64,
+          108.93,
+          113.57
+        ],
+        "phash": "e03c7e7e77787e7e"
+      },
+      {
+        "index": 29,
+        "start_s": 152.14,
+        "end_s": 156.46,
+        "duration_s": 4.32,
+        "sharpness": 800.92,
+        "luminance": 130.47,
+        "motion": 2.036,
+        "mean_rgb": [
+          128.03,
+          130.83,
+          135.15
+        ],
+        "phash": "90502040ff7f4f7f"
+      },
+      {
+        "index": 30,
+        "start_s": 156.46,
+        "end_s": 163.06,
+        "duration_s": 6.6,
+        "sharpness": 994.19,
+        "luminance": 141.18,
+        "motion": 2.471,
+        "mean_rgb": [
+          139.14,
+          143.47,
+          134.96
+        ],
+        "phash": "ff7f1f0042000000"
+      },
+      {
+        "index": 31,
+        "start_s": 163.06,
+        "end_s": 170.26,
+        "duration_s": 7.2,
+        "sharpness": 911.45,
+        "luminance": 122.08,
+        "motion": 3.205,
+        "mean_rgb": [
+          119.06,
+          123.6,
+          122.28
+        ],
+        "phash": "9e16757f480e0000"
+      },
+      {
+        "index": 32,
+        "start_s": 170.26,
+        "end_s": 174.06,
+        "duration_s": 3.8,
+        "sharpness": 911.34,
+        "luminance": 126.73,
+        "motion": 3.237,
+        "mean_rgb": [
+          127.8,
+          129.5,
+          109.82
+        ],
+        "phash": "ff68410c60004070"
+      },
+      {
+        "index": 33,
+        "start_s": 174.06,
+        "end_s": 176.06,
+        "duration_s": 2.0,
+        "sharpness": 749.0,
+        "luminance": 99.79,
+        "motion": 3.446,
+        "mean_rgb": [
+          106.34,
+          96.92,
+          97.63
+        ],
+        "phash": "8000777f8b7f684d"
+      },
+      {
+        "index": 34,
+        "start_s": 176.06,
+        "end_s": 193.78,
+        "duration_s": 17.72,
+        "sharpness": 969.6,
+        "luminance": 101.4,
+        "motion": 3.068,
+        "mean_rgb": [
+          102.08,
+          103.11,
+          91.0
+        ],
+        "phash": "8f20033ffb6f7b43"
+      },
+      {
+        "index": 35,
+        "start_s": 193.78,
+        "end_s": 200.88,
+        "duration_s": 7.1,
+        "sharpness": 959.26,
+        "luminance": 96.81,
+        "motion": 2.594,
+        "mean_rgb": [
+          94.45,
+          96.9,
+          102.72
+        ],
+        "phash": "80020135c75f7f7f"
+      },
+      {
+        "index": 36,
+        "start_s": 200.88,
+        "end_s": 204.08,
+        "duration_s": 3.2,
+        "sharpness": 1124.67,
+        "luminance": 122.3,
+        "motion": 2.597,
+        "mean_rgb": [
+          120.69,
+          124.78,
+          113.93
+        ],
+        "phash": "e77f0048010b0000"
+      },
+      {
+        "index": 37,
+        "start_s": 204.08,
+        "end_s": 209.72,
+        "duration_s": 5.64,
+        "sharpness": 1005.14,
+        "luminance": 119.57,
+        "motion": 3.141,
+        "mean_rgb": [
+          115.22,
+          121.35,
+          121.94
+        ],
+        "phash": "ff057f7f577e2c05"
+      },
+      {
+        "index": 38,
+        "start_s": 209.72,
+        "end_s": 215.28,
+        "duration_s": 5.56,
+        "sharpness": 953.46,
+        "luminance": 118.07,
+        "motion": 3.459,
+        "mean_rgb": [
+          117.78,
+          120.95,
+          104.43
+        ],
+        "phash": "b8607c77f8030060"
+      },
+      {
+        "index": 39,
+        "start_s": 215.28,
+        "end_s": 219.98,
+        "duration_s": 4.7,
+        "sharpness": 976.55,
+        "luminance": 128.83,
+        "motion": 2.906,
+        "mean_rgb": [
+          124.0,
+          131.92,
+          125.71
+        ],
+        "phash": "ff7f000740030000"
+      },
+      {
+        "index": 40,
+        "start_s": 219.98,
+        "end_s": 220.74,
+        "duration_s": 0.76,
+        "sharpness": 936.21,
+        "luminance": 86.22,
+        "motion": 3.171,
+        "mean_rgb": [
+          119.6,
+          72.09,
+          71.63
+        ],
+        "phash": "808004d810190503"
+      },
+      {
+        "index": 41,
+        "start_s": 220.74,
+        "end_s": 225.36,
+        "duration_s": 4.62,
+        "sharpness": 1068.04,
+        "luminance": 99.38,
+        "motion": 1.57,
+        "mean_rgb": [
+          99.04,
+          98.91,
+          102.87
+        ],
+        "phash": "bf7a7e180024022f"
+      },
+      {
+        "index": 42,
+        "start_s": 225.36,
+        "end_s": 229.66,
+        "duration_s": 4.3,
+        "sharpness": 1213.31,
+        "luminance": 126.68,
+        "motion": 2.738,
+        "mean_rgb": [
+          129.66,
+          130.09,
+          101.38
+        ],
+        "phash": "80056c7f73677e7f"
+      },
+      {
+        "index": 43,
+        "start_s": 229.66,
+        "end_s": 235.0,
+        "duration_s": 5.34,
+        "sharpness": 823.22,
+        "luminance": 121.47,
+        "motion": 2.344,
+        "mean_rgb": [
+          120.34,
+          124.21,
+          110.38
+        ],
+        "phash": "807c397d777f7e7f"
+      }
+    ]
+  },
+  "sound": {
+    "noise_floor_dbfs": -34.42,
+    "rms_db_p50": -16.84,
+    "rms_db_p95": -12.62,
+    "audio_duration_s": 235.013,
+    "integrated_lufs": -13.0,
+    "loudness_range_lu": 3.7,
+    "true_peak_dbfs": -1.9,
+    "sample_rate": 48000,
+    "channels": 2,
+    "codec": "opus"
+  },
+  "injection": {
+    "variant": "v03_scene_swap",
+    "subtask": "v2_swap",
+    "rng_seed": 0,
+    "start_s": 156.46,
+    "end_s": 193.78,
+    "duration_s": 37.32,
+    "scene_1": {
+      "group": "A",
+      "broken_start_s": 176.18,
+      "broken_end_s": 193.78,
+      "scene_index": 34
+    },
+    "scene_2": {
+      "group": "B",
+      "broken_start_s": 156.46,
+      "broken_end_s": 176.18,
+      "scene_index": 31
+    }
+  }
+}

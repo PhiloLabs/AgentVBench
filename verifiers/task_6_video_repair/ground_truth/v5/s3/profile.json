@@ -1,0 +1,475 @@
+{
+  "source_file": "v5_source.mp4",
+  "format": {
+    "resolution": {
+      "w": 1280,
+      "h": 720
+    },
+    "framerate": 23.976,
+    "duration_s": 181.314,
+    "codec": "h264",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "pix_fmt": "yuv420p",
+    "aspect_ratio": "16:9",
+    "bitrate_bps": 681997,
+    "nb_frames": 4347
+  },
+  "visual": {
+    "shot_boundaries_s": [
+      0.0,
+      1.584917,
+      3.211542,
+      5.296958,
+      14.597917,
+      16.141125,
+      40.5405,
+      42.083708,
+      43.79375,
+      53.511792,
+      55.30525,
+      58.641917,
+      60.226833,
+      62.353958,
+      81.456375,
+      82.207125,
+      86.419667,
+      117.909458,
+      123.331542,
+      153.486667,
+      155.572083,
+      157.782625,
+      159.701208,
+      164.998167,
+      173.381542
+    ],
+    "sharpness_range": [
+      17.97,
+      355.1
+    ],
+    "luminance_range": [
+      126.52,
+      241.16
+    ],
+    "motion_range": [
+      0.0,
+      4.871
+    ]
+  },
+  "narrative": {
+    "scene_count": 25,
+    "scene_list": [
+      {
+        "index": 0,
+        "start_s": 0.0,
+        "end_s": 1.584917,
+        "duration_s": 1.584917,
+        "sharpness": 202.67,
+        "luminance": 173.88,
+        "motion": 2.902,
+        "mean_rgb": [
+          217.82,
+          167.69,
+          90.81
+        ],
+        "phash": "0f9f5b4cb6557078"
+      },
+      {
+        "index": 1,
+        "start_s": 1.584917,
+        "end_s": 3.211542,
+        "duration_s": 1.626625,
+        "sharpness": 331.12,
+        "luminance": 126.52,
+        "motion": 0.903,
+        "mean_rgb": [
+          151.39,
+          123.92,
+          74.74
+        ],
+        "phash": "004cefddb6186549"
+      },
+      {
+        "index": 2,
+        "start_s": 3.211542,
+        "end_s": 5.296958,
+        "duration_s": 2.085416,
+        "sharpness": 321.58,
+        "luminance": 165.41,
+        "motion": 4.871,
+        "mean_rgb": [
+          170.42,
+          166.46,
+          146.76
+        ],
+        "phash": "f7e3e1c8b6ca08c1"
+      },
+      {
+        "index": 3,
+        "start_s": 5.296958,
+        "end_s": 14.597917,
+        "duration_s": 9.300959,
+        "sharpness": 181.92,
+        "luminance": 161.3,
+        "motion": 1.282,
+        "mean_rgb": [
+          179.99,
+          153.87,
+          150.61
+        ],
+        "phash": "c3c3c3c3d3c3c3c3"
+      },
+      {
+        "index": 4,
+        "start_s": 14.597917,
+        "end_s": 16.141125,
+        "duration_s": 1.543208,
+        "sharpness": 85.61,
+        "luminance": 188.87,
+        "motion": 2.354,
+        "mean_rgb": [
+          200.8,
+          185.43,
+          175.04
+        ],
+        "phash": "c3cbf3c3c3c3c3c3"
+      },
+      {
+        "index": 5,
+        "start_s": 16.141125,
+        "end_s": 40.5405,
+        "duration_s": 24.399375,
+        "sharpness": 160.42,
+        "luminance": 181.63,
+        "motion": 3.018,
+        "mean_rgb": [
+          196.84,
+          175.55,
+          173.17
+        ],
+        "phash": "c3c3dbdbdfdfd3c3"
+      },
+      {
+        "index": 6,
+        "start_s": 40.5405,
+        "end_s": 42.083708,
+        "duration_s": 1.543208,
+        "sharpness": 26.82,
+        "luminance": 222.55,
+        "motion": 2.664,
+        "mean_rgb": [
+          225.71,
+          221.83,
+          217.79
+        ],
+        "phash": "c3d3d3d3c7c3c3cb"
+      },
+      {
+        "index": 7,
+        "start_s": 42.083708,
+        "end_s": 43.79375,
+        "duration_s": 1.710042,
+        "sharpness": 148.15,
+        "luminance": 171.85,
+        "motion": 2.427,
+        "mean_rgb": [
+          183.6,
+          167.77,
+          162.26
+        ],
+        "phash": "c3c3cbcbcfc3c7c3"
+      },
+      {
+        "index": 8,
+        "start_s": 43.79375,
+        "end_s": 53.511792,
+        "duration_s": 9.718042,
+        "sharpness": 200.24,
+        "luminance": 176.59,
+        "motion": 3.043,
+        "mean_rgb": [
+          191.95,
+          170.88,
+          165.72
+        ],
+        "phash": "c3cbc3dbdbc3c3c3"
+      },
+      {
+        "index": 9,
+        "start_s": 53.511792,
+        "end_s": 55.30525,
+        "duration_s": 1.793458,
+        "sharpness": 117.02,
+        "luminance": 191.33,
+        "motion": 1.454,
+        "mean_rgb": [
+          201.11,
+          189.25,
+          176.24
+        ],
+        "phash": "f3cbc3dbc3c3c3c3"
+      },
+      {
+        "index": 10,
+        "start_s": 55.30525,
+        "end_s": 58.641917,
+        "duration_s": 3.336667,
+        "sharpness": 130.14,
+        "luminance": 170.6,
+        "motion": 1.583,
+        "mean_rgb": [
+          181.41,
+          166.5,
+          163.39
+        ],
+        "phash": "c3c3dfefd7cfc3c3"
+      },
+      {
+        "index": 11,
+        "start_s": 58.641917,
+        "end_s": 60.226833,
+        "duration_s": 1.584916,
+        "sharpness": 84.39,
+        "luminance": 185.09,
+        "motion": 1.709,
+        "mean_rgb": [
+          193.33,
+          182.83,
+          175.05
+        ],
+        "phash": "c3dfe7e3c3c3d3c3"
+      },
+      {
+        "index": 12,
+        "start_s": 60.226833,
+        "end_s": 62.353958,
+        "duration_s": 2.127125,
+        "sharpness": 214.91,
+        "luminance": 188.56,
+        "motion": 1.859,
+        "mean_rgb": [
+          197.91,
+          187.43,
+          169.85
+        ],
+        "phash": "c3c3c3c3dfe7c3c3"
+      },
+      {
+        "index": 13,
+        "start_s": 62.353958,
+        "end_s": 81.456375,
+        "duration_s": 19.102417,
+        "sharpness": 240.28,
+        "luminance": 186.16,
+        "motion": 1.533,
+        "mean_rgb": [
+          200.65,
+          181.35,
+          172.9
+        ],
+        "phash": "c3c3d3c3d3c3c3c3"
+      },
+      {
+        "index": 14,
+        "start_s": 81.456375,
+        "end_s": 82.207125,
+        "duration_s": 0.75075,
+        "sharpness": 308.55,
+        "luminance": 181.77,
+        "motion": 0.609,
+        "mean_rgb": [
+          197.43,
+          176.77,
+          166.39
+        ],
+        "phash": "ffc7c3c3c3c3c3c3"
+      },
+      {
+        "index": 15,
+        "start_s": 82.207125,
+        "end_s": 86.419667,
+        "duration_s": 4.212542,
+        "sharpness": 71.69,
+        "luminance": 193.02,
+        "motion": 2.086,
+        "mean_rgb": [
+          207.19,
+          188.32,
+          180.15
+        ],
+        "phash": "c3f7e3c3c3c3c3ff"
+      },
+      {
+        "index": 16,
+        "start_s": 86.419667,
+        "end_s": 117.909458,
+        "duration_s": 31.489791,
+        "sharpness": 119.97,
+        "luminance": 193.65,
+        "motion": 2.52,
+        "mean_rgb": [
+          212.03,
+          189.2,
+          168.28
+        ],
+        "phash": "d3cbc3c3c3e7dfdb"
+      },
+      {
+        "index": 17,
+        "start_s": 117.909458,
+        "end_s": 123.331542,
+        "duration_s": 5.422084,
+        "sharpness": 99.56,
+        "luminance": 193.33,
+        "motion": 2.042,
+        "mean_rgb": [
+          218.42,
+          188.87,
+          150.49
+        ],
+        "phash": "d3c3c7c7cbc3c3c3"
+      },
+      {
+        "index": 18,
+        "start_s": 123.331542,
+        "end_s": 153.486667,
+        "duration_s": 30.155125,
+        "sharpness": 139.39,
+        "luminance": 178.17,
+        "motion": 1.148,
+        "mean_rgb": [
+          195.21,
+          174.01,
+          154.92
+        ],
+        "phash": "c3c3c3cbc3c7c7c3"
+      },
+      {
+        "index": 19,
+        "start_s": 153.486667,
+        "end_s": 155.572083,
+        "duration_s": 2.085416,
+        "sharpness": 87.49,
+        "luminance": 193.84,
+        "motion": 1.943,
+        "mean_rgb": [
+          207.73,
+          189.67,
+          178.99
+        ],
+        "phash": "c3c3e7e7e3f3ffc3"
+      },
+      {
+        "index": 20,
+        "start_s": 155.572083,
+        "end_s": 157.782625,
+        "duration_s": 2.210542,
+        "sharpness": 85.19,
+        "luminance": 183.98,
+        "motion": 0.506,
+        "mean_rgb": [
+          199.56,
+          181.08,
+          158.05
+        ],
+        "phash": "c3c3cbfbc3c3e7e3"
+      },
+      {
+        "index": 21,
+        "start_s": 157.782625,
+        "end_s": 159.701208,
+        "duration_s": 1.918583,
+        "sharpness": 160.28,
+        "luminance": 175.86,
+        "motion": 1.199,
+        "mean_rgb": [
+          190.57,
+          172.98,
+          152.17
+        ],
+        "phash": "c3e3c3dbdbc3c3c3"
+      },
+      {
+        "index": 22,
+        "start_s": 159.701208,
+        "end_s": 164.998167,
+        "duration_s": 5.296959,
+        "sharpness": 17.97,
+        "luminance": 241.16,
+        "motion": 0.0,
+        "mean_rgb": [
+          229.82,
+          245.71,
+          247.36
+        ],
+        "phash": "004affffffffffff"
+      },
+      {
+        "index": 23,
+        "start_s": 164.998167,
+        "end_s": 173.381542,
+        "duration_s": 8.383375,
+        "sharpness": 355.1,
+        "luminance": 192.97,
+        "motion": 1.889,
+        "mean_rgb": [
+          178.21,
+          200.32,
+          194.06
+        ],
+        "phash": "9c3c7c7fbfbffdbc"
+      },
+      {
+        "index": 24,
+        "start_s": 173.381542,
+        "end_s": 181.306125,
+        "duration_s": 7.924583,
+        "sharpness": 313.35,
+        "luminance": 206.0,
+        "motion": 2.68,
+        "mean_rgb": [
+          180.13,
+          216.06,
+          222.64
+        ],
+        "phash": "070f0f2f0f0f0f62"
+      }
+    ]
+  },
+  "sound": {
+    "noise_floor_dbfs": -25.17,
+    "rms_db_p50": -17.85,
+    "rms_db_p95": -10.63,
+    "audio_duration_s": 181.313,
+    "integrated_lufs": -14.8,
+    "loudness_range_lu": 3.1,
+    "true_peak_dbfs": -2.7,
+    "sample_rate": 48000,
+    "channels": 2,
+    "codec": "opus"
+  },
+  "injection": {
+    "variant": "v06_duplicate_segment",
+    "subtask": "v5_tail_overlap",
+    "rng_seed": 0,
+    "mode": "tail_overlap",
+    "start_s": 123.332,
+    "end_s": 127.904,
+    "duration_s": 4.572,
+    "target_scene_index": 17,
+    "target_scene": {
+      "index": 17,
+      "start_s": 117.909458,
+      "end_s": 123.331542,
+      "duration_s": 5.422084
+    },
+    "next_scene_index": 18,
+    "next_scene": {
+      "index": 18,
+      "start_s": 123.331542,
+      "end_s": 153.486667,
+      "duration_s": 30.155125
+    },
+    "src_dup_start_s": 118.75999999999999,
+    "src_dup_end_s": 123.332
+  }
+}

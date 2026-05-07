@@ -1,0 +1,9 @@
+{
+  "_comment": "A 4-slot perfect-pick solution. Replace the source values with the actual correct_assembly_in_slot_order from the dataset for the task_id you care about.",
+  "segments": [
+    {"output": [0.0, 2.0], "source": "3.mp4",  "source_range": [0.0, 2.0]},
+    {"output": [2.0, 3.5], "source": "7.mp4",  "source_range": [0.0, 1.5]},
+    {"output": [3.5, 5.0], "source": "5.mp4",  "source_range": [0.0, 1.5]},
+    {"output": [5.0, 7.0], "source": "11.mp4", "source_range": [0.0, 2.0]}
+  ]
+}

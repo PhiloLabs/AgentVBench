@@ -1,0 +1,15 @@
+{
+  "id": "v04_color_grade_shift",
+  "name": "Color Grade Shift",
+  "description": "A color transform (hue / saturation / temperature) is applied inside the defect window, leaving luminance and motion intact. The agent must infer the target grade from the surrounding (out-of-window) clean shots in broken.mp4 — no reference frame is provided.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5,
+    "video_share": 0.90,
+    "audio_share": 0.10
+  }
+}

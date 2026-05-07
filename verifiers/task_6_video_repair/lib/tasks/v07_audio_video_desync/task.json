@@ -1,0 +1,16 @@
+{
+  "id": "v07_audio_video_desync",
+  "name": "Audio/Video Desync",
+  "description": "Audio is mistimed against the (correct) video — three modes: a constant offset across the whole clip, a step drift inserted at one scene boundary, or per-segment time-stretching that nets back to the original duration. Picture is byte-correct in every subtask; only the audio needs to be re-timed.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5,
+    "w_out": 1,
+    "video_share": 0.10,
+    "audio_share": 0.90
+  }
+}

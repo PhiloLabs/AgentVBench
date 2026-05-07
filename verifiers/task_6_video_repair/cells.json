@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "score_breakdown": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60,
+    "total": 100
+  },
+  "cells": {
+    "v1/s1": {"variant": "v01_frozen_scene",       "subtask": "v1_frozen_av",       "profile_path": "ground_truth/v1/s1/profile.json", "source_path": "sources/v1_source.mp4", "broken_path": "broken/v1/s1/broken.mp4"},
+    "v1/s2": {"variant": "v01_frozen_scene",       "subtask": "v1_frozen_video_only","profile_path": "ground_truth/v1/s2/profile.json", "source_path": "sources/v1_source.mp4", "broken_path": "broken/v1/s2/broken.mp4"},
+    "v1/s3": {"variant": "v01_frozen_scene",       "subtask": "v1_buffering",       "profile_path": "ground_truth/v1/s3/profile.json", "source_path": "sources/v1_source.mp4", "broken_path": "broken/v1/s3/broken.mp4"},
+    "v2/s1": {"variant": "v03_scene_swap",         "subtask": "v2_gapped_easy",     "profile_path": "ground_truth/v2/s1/profile.json", "source_path": "sources/v2_source.mp4", "broken_path": "broken/v2/s1/broken.mp4"},
+    "v2/s2": {"variant": "v03_scene_swap",         "subtask": "v2_adjacent_medium", "profile_path": "ground_truth/v2/s2/profile.json", "source_path": "sources/v2_source.mp4", "broken_path": "broken/v2/s2/broken.mp4"},
+    "v2/s3": {"variant": "v03_scene_swap",         "subtask": "v2_adjacent_hard",   "profile_path": "ground_truth/v2/s3/profile.json", "source_path": "sources/v2_source.mp4", "broken_path": "broken/v2/s3/broken.mp4"},
+    "v3/s1": {"variant": "v04_color_grade_shift",  "subtask": "v3_cold_desat",      "profile_path": "ground_truth/v3/s1/profile.json", "source_path": "sources/v3_source.mp4", "broken_path": "broken/v3/s1/broken.mp4"},
+    "v3/s2": {"variant": "v04_color_grade_shift",  "subtask": "v3_magenta_shift",   "profile_path": "ground_truth/v3/s2/profile.json", "source_path": "sources/v3_source.mp4", "broken_path": "broken/v3/s2/broken.mp4"},
+    "v3/s3": {"variant": "v04_color_grade_shift",  "subtask": "v3_warm_amber",      "profile_path": "ground_truth/v3/s3/profile.json", "source_path": "sources/v3_source.mp4", "broken_path": "broken/v3/s3/broken.mp4"},
+    "v4/s1": {"variant": "v05_noise_floor_spike",  "subtask": "v4_white_subtle",    "profile_path": "ground_truth/v4/s1/profile.json", "source_path": "sources/v4_source.mp4", "broken_path": "broken/v4/s1/broken.mp4"},
+    "v4/s2": {"variant": "v05_noise_floor_spike",  "subtask": "v4_pink_moderate",   "profile_path": "ground_truth/v4/s2/profile.json", "source_path": "sources/v4_source.mp4", "broken_path": "broken/v4/s2/broken.mp4"},
+    "v4/s3": {"variant": "v05_noise_floor_spike",  "subtask": "v4_brown_severe",    "profile_path": "ground_truth/v4/s3/profile.json", "source_path": "sources/v4_source.mp4", "broken_path": "broken/v4/s3/broken.mp4"},
+    "v5/s1": {"variant": "v06_duplicate_segment",  "subtask": "v5_tail_short_early","profile_path": "ground_truth/v5/s1/profile.json", "source_path": "sources/v5_source.mp4", "broken_path": "broken/v5/s1/broken.mp4"},
+    "v5/s2": {"variant": "v06_duplicate_segment",  "subtask": "v5_tail_med_middle", "profile_path": "ground_truth/v5/s2/profile.json", "source_path": "sources/v5_source.mp4", "broken_path": "broken/v5/s2/broken.mp4"},
+    "v5/s3": {"variant": "v06_duplicate_segment",  "subtask": "v5_tail_long_late",  "profile_path": "ground_truth/v5/s3/profile.json", "source_path": "sources/v5_source.mp4", "broken_path": "broken/v5/s3/broken.mp4"},
+    "v5/s4": {"variant": "v06_duplicate_segment",  "subtask": "v5_cross_angle_ai",  "profile_path": "ground_truth/v5/s4/profile.json", "source_path": "sources/v5_source.mp4", "broken_path": "broken/v5/s4/broken.mp4"},
+    "v6/s1": {"variant": "v07_audio_video_desync", "subtask": "v6_global_offset",   "profile_path": "ground_truth/v6/s1/profile.json", "source_path": "sources/v6_source.mp4", "broken_path": "broken/v6/s1/broken.mp4"},
+    "v6/s2": {"variant": "v07_audio_video_desync", "subtask": "v6_window_lag",      "profile_path": "ground_truth/v6/s2/profile.json", "source_path": "sources/v6_source.mp4", "broken_path": "broken/v6/s2/broken.mp4"},
+    "v6/s3": {"variant": "v07_audio_video_desync", "subtask": "v6_drift_catchup",   "profile_path": "ground_truth/v6/s3/profile.json", "source_path": "sources/v6_source.mp4", "broken_path": "broken/v6/s3/broken.mp4"},
+    "v7/s1": {"variant": "_combined",              "subtask": "v7_freeze_plus_color","profile_path": "ground_truth/v7/s1/profile.json", "source_path": "sources/v7_source.mp4", "broken_path": "broken/v7/s1/broken.mp4"},
+    "v7/s2": {"variant": "_combined",              "subtask": "v7_color_plus_noise","profile_path": "ground_truth/v7/s2/profile.json", "source_path": "sources/v7_source.mp4", "broken_path": "broken/v7/s2/broken.mp4"},
+    "v7/s3": {"variant": "_combined",              "subtask": "v7_dup_plus_desync", "profile_path": "ground_truth/v7/s3/profile.json", "source_path": "sources/v7_source.mp4", "broken_path": "broken/v7/s3/broken.mp4"}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "v06_duplicate_segment",
+  "name": "Duplicate Segment at Cut",
+  "description": "A short segment is duplicated back-to-back at a scene boundary, modeling the editor's mistake of keeping the overlapping tail of one clip and head of the next. The broken video is `dur` seconds longer than the source; both video and audio repeat. The agent must locate and remove one copy.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5
+  }
+}

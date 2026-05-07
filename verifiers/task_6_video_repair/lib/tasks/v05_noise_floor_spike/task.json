@@ -1,0 +1,15 @@
+{
+  "id": "v05_noise_floor_spike",
+  "name": "Noise Floor Spike",
+  "description": "A broadband noise layer (white/pink/brown) is mixed into the audio inside the defect window, raising the noise floor. Video and timing are unaffected.",
+  "weights": {
+    "format": 5,
+    "localization": 35,
+    "edit": 60
+  },
+  "scoring": {
+    "w_in": 2.5,
+    "video_share": 0.10,
+    "audio_share": 0.90
+  }
+}
