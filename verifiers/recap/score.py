@@ -316,31 +316,32 @@ def score_task(
 
 
 def _load_rubric_from_dataset(dataset: str, task_id: str) -> list[dict]:
+    """Look up `rubric_items` for `task_id` (recap family)."""
     p = Path(dataset)
     if p.exists() and p.suffix == ".parquet":
         import pyarrow.parquet as pq
-        tbl = pq.read_table(p, columns=["task_id", "rubric_items"])
+        tbl = pq.read_table(p, columns=["task_family", "task_id", "rubric_items"])
     elif p.is_dir():
         candidate = p / "data" / "train-00000-of-00001.parquet"
         if not candidate.exists():
             raise FileNotFoundError(f"no parquet at {candidate}")
         import pyarrow.parquet as pq
-        tbl = pq.read_table(candidate, columns=["task_id", "rubric_items"])
+        tbl = pq.read_table(candidate, columns=["task_family", "task_id", "rubric_items"])
     else:
         from datasets import load_dataset
-        ds = load_dataset(dataset, "recap", split="train")
+        ds = load_dataset(dataset, split="train")
         for row in ds:
-            if str(row["task_id"]) == str(task_id):
+            if row.get("task_family") == "recap" and str(row["task_id"]) == str(task_id):
                 return list(row["rubric_items"])
-        raise KeyError(f"task_id={task_id} not found in {dataset}")
+        raise KeyError(f"recap/task_id={task_id} not found in {dataset}")
 
+    families = tbl.column("task_family").to_pylist()
     ids = [str(x) for x in tbl.column("task_id").to_pylist()]
     arr = tbl.column("rubric_items").to_pylist()
-    try:
-        i = ids.index(str(task_id))
-    except ValueError as exc:
-        raise KeyError(f"task_id={task_id} not in dataset") from exc
-    return list(arr[i])
+    for i, (fam, tid) in enumerate(zip(families, ids)):
+        if fam == "recap" and tid == str(task_id):
+            return list(arr[i])
+    raise KeyError(f"recap/task_id={task_id} not in dataset")
 
 
 def cli(argv: list[str] | None = None) -> int:

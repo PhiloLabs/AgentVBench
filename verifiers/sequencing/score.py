@@ -227,35 +227,36 @@ def score_task(
 
 
 def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[str]:
-    """Look up `correct_order` for a given task_id from a parquet path or HF id."""
+    """Look up `correct_order` for a given task_id from a parquet path or HF id.
+
+    The unified AgentVBench_100 parquet has a `task_family` column; we filter
+    on `task_family == "sequencing"` AND `task_id`.
+    """
     p = Path(dataset)
     if p.exists() and p.suffix == ".parquet":
         import pyarrow.parquet as pq
-        tbl = pq.read_table(p, columns=["task_id", "correct_order"])
+        tbl = pq.read_table(p, columns=["task_family", "task_id", "correct_order"])
     elif p.is_dir():
-        # repo-style: <dir>/data/train-00000-of-00001.parquet
         candidate = p / "data" / "train-00000-of-00001.parquet"
         if not candidate.exists():
             raise FileNotFoundError(f"no parquet at {candidate}")
         import pyarrow.parquet as pq
-        tbl = pq.read_table(candidate, columns=["task_id", "correct_order"])
+        tbl = pq.read_table(candidate, columns=["task_family", "task_id", "correct_order"])
     else:
-        # HF hub id — load via `datasets` and the relevant config
         from datasets import load_dataset
-        ds = load_dataset(dataset, "sequencing", split="train")
-        tbl = None
+        ds = load_dataset(dataset, split="train")
         for row in ds:
-            if str(row["task_id"]) == str(task_id):
+            if row.get("task_family") == "sequencing" and str(row["task_id"]) == str(task_id):
                 return [str(x) for x in row["correct_order"]]
-        raise KeyError(f"task_id={task_id} not found in {dataset}")
+        raise KeyError(f"sequencing/task_id={task_id} not found in {dataset}")
 
+    families = tbl.column("task_family").to_pylist()
     ids = [str(x) for x in tbl.column("task_id").to_pylist()]
     correct = tbl.column("correct_order").to_pylist()
-    try:
-        i = ids.index(str(task_id))
-    except ValueError as exc:
-        raise KeyError(f"task_id={task_id} not in dataset") from exc
-    return [str(x) for x in correct[i]]
+    for i, (fam, tid) in enumerate(zip(families, ids)):
+        if fam == "sequencing" and tid == str(task_id):
+            return [str(x) for x in correct[i]]
+    raise KeyError(f"sequencing/task_id={task_id} not in dataset")
 
 
 def cli(argv: list[str] | None = None) -> int:
