@@ -1,6 +1,6 @@
-# task_7 — video assembly
+# assembly — video assembly
 
-Each task in `task_7_3` gives the agent N candidate video clips and a
+Each task in `assembly` gives the agent N candidate video clips and a
 storyboard with M slots (each slot describes one shot in cinematic
 language: `description`, `shot_size`, `camera_angle`, `lens_size`,
 `camera_movement`). The agent picks one candidate per slot and concatenates
@@ -26,7 +26,7 @@ picking gives ≈1/3 since slots have 3 candidates on average). See
 ## Files
 
 ```
-task_7_video_assembly/
+assembly/
 ├── score.py    public entry point + CLI + adjustment math
 └── README.md
 ```
@@ -37,7 +37,7 @@ calls, no system deps.
 ## Score one task
 
 ```bash
-avb-score-task-7 \
+avb-score-assembly \
     --solution-json path/to/agent_output/solution.json \
     --task-id 1
 ```
@@ -45,7 +45,7 @@ avb-score-task-7 \
 Or pass the answer inline (no dataset access):
 
 ```bash
-avb-score-task-7 \
+avb-score-assembly \
     --solution-json path/to/agent_output/solution.json \
     --task-id 1 \
     --correct-assembly "3.mp4,7.mp4,5.mp4,11.mp4"
@@ -54,7 +54,7 @@ avb-score-task-7 \
 Programmatic:
 
 ```python
-from verifiers.task_7_video_assembly import score_task
+from verifiers.assembly import score_task
 
 result = score_task(
     solution_json="path/to/solution.json",

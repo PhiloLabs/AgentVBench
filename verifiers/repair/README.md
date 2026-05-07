@@ -1,6 +1,6 @@
-# task_6 — broken-video repair
+# repair — broken-video repair
 
-Each task in `task_6` gives the agent a `broken.mp4` containing one or more
+Each task in `repair` gives the agent a `broken.mp4` containing one or more
 defects (frozen scene, scene swap, color shift, audio noise, duplicate
 segment, A/V desync; the v7 cells stack several at once). The agent must:
 
@@ -23,7 +23,7 @@ Three rubrics, weighted out of 100 points:
 final_score = (format + localization + edit) / 100   ∈ [0, 1]
 ```
 
-There is **no separate adjusted form** for task_6 — `final_score` is what
+There is **no separate adjusted form** for repair — `final_score` is what
 the paper reports.
 
 ## What you need to score
@@ -37,7 +37,7 @@ the paper reports.
 ## Layout
 
 ```
-task_6_video_repair/
+repair/
 ├── score.py                  public entry point + CLI
 ├── cells.json                manifest mapping task_id → (variant, GT profile, source basename)
 ├── ground_truth/
@@ -62,13 +62,13 @@ task_6_video_repair/
 ## Requirements
 
 - ffmpeg / ffprobe on PATH (system dep)
-- `pip install agenticvbench[task6]` — adds numpy / opencv-python / scipy
+- `pip install agenticvbench[repair]` — adds numpy / opencv-python / scipy
   for SSIM, dhash, xcorr
 
 ## Score one task
 
 ```bash
-avb-score-task-6 \
+avb-score-repair \
     --fixed-mp4 path/to/agent_output/fixed.mp4 \
     --report-md path/to/agent_output/report.md \
     --source-mp4 path/to/v1_source.mp4 \
@@ -76,15 +76,15 @@ avb-score-task-6 \
 ```
 
 The 6 source mp4s (`v1_source.mp4` through `v7_source.mp4`) live in the
-dataset under `task_6/sources/` and are referenced per-cell from
+dataset under `repair/sources/` and are referenced per-cell from
 `verifier_reference_urls`.
 
 ```python
 from datasets import load_dataset
 from huggingface_hub import hf_hub_download
-from verifiers.task_6_video_repair import score_task
+from verifiers.repair import score_task
 
-ds = load_dataset("Anonymous47621123/AgentVBench_100", "task_6", split="train")
+ds = load_dataset("Anonymous47621123/AgentVBench_100", "repair", split="train")
 row = next(r for r in ds if r["task_id"] == "bench-broken-cut-v1-s1")
 
 # Download the per-cell source video from the dataset

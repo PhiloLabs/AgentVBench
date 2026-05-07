@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / task_4_2 — cutbench creative recap.
+"""Verifier for AgentVBench_100 / recap — creative recap.
 
 The dataset row carries an inline ``rubric_items`` column: a list of dicts,
 each item being one expert-authored check. There are three dispatch types:
@@ -26,7 +26,7 @@ USAGE
 -----
 As a library:
 
-    from verifiers.task_4_cutbench import score_task
+    from verifiers.recap import score_task
     result = score_task(
         final_mp4=Path("agent_output/final.mp4"),
         rubric_items=row["rubric_items"],   # from the dataset
@@ -37,7 +37,7 @@ As a library:
 
 CLI:
 
-    python -m verifiers.task_4_cutbench.score \
+    python -m verifiers.recap.score \
         --final-mp4 path/to/final.mp4 \
         --task-id cutbench-animated_out \
         --dataset Anonymous47621123/AgentVBench_100
@@ -48,7 +48,7 @@ reads the Gemini API key from the ``GEMINI_API_KEY`` environment variable.
 REQUIREMENTS
 ------------
 - ffmpeg / ffprobe on PATH (system dependency)
-- google-genai  (pip extras: agenticvbench[task4])
+- google-genai  (pip extras: agenticvbench[recap])
 - a Google AI Studio API key in ``GEMINI_API_KEY``
 - internet (for the Gemini File API)
 """
@@ -167,7 +167,7 @@ def score_task(
     gemini_model: str = "gemini-3-flash-preview",
     max_concurrent_llm: int = 16,
 ) -> CutbenchResult:
-    """Score one task_4_2 instance.
+    """Score one recap instance.
 
     Parameters
     ----------
@@ -328,7 +328,7 @@ def _load_rubric_from_dataset(dataset: str, task_id: str) -> list[dict]:
         tbl = pq.read_table(candidate, columns=["task_id", "rubric_items"])
     else:
         from datasets import load_dataset
-        ds = load_dataset(dataset, "task_4_2", split="train")
+        ds = load_dataset(dataset, "recap", split="train")
         for row in ds:
             if str(row["task_id"]) == str(task_id):
                 return list(row["rubric_items"])
@@ -345,13 +345,13 @@ def _load_rubric_from_dataset(dataset: str, task_id: str) -> list[dict]:
 
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="avb-score-task-4",
-        description="Score one AgentVBench_100/task_4_2 cutbench solution.",
+        prog="avb-score-recap",
+        description="Score one AgentVBench_100/recap solution.",
     )
     p.add_argument("--final-mp4", required=True, type=Path,
                    help="path to the agent's final.mp4")
     p.add_argument("--task-id", required=True,
-                   help="task_id within task_4_2, e.g. 'cutbench-animated_out'")
+                   help="task_id within recap, e.g. 'cutbench-animated_out' (the slug naming convention is preserved from the dataset)")
     p.add_argument("--dataset", default="Anonymous47621123/AgentVBench_100",
                    help="HF dataset id (default: Anonymous47621123/AgentVBench_100), "
                         "or a local parquet/dir path")

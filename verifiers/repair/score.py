@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / task_6 — broken-video repair.
+"""Verifier for AgentVBench_100 / repair — broken-video repair.
 
 Each cell of the benchmark gives the agent a `broken.mp4` containing one or
 more defects (frozen scene, scene swap, color shift, audio noise, duplicate
@@ -29,7 +29,7 @@ USAGE
 -----
 As a library:
 
-    from verifiers.task_6_video_repair import score_task
+    from verifiers.repair import score_task
     result = score_task(
         fixed_mp4=Path("agent_output/fixed.mp4"),
         report_md=Path("agent_output/report.md"),
@@ -40,7 +40,7 @@ As a library:
 
 CLI:
 
-    python -m verifiers.task_6_video_repair.score \
+    python -m verifiers.repair.score \
         --fixed-mp4 path/to/fixed.mp4 \
         --report-md path/to/report.md \
         --source-mp4 path/to/v1_source.mp4 \
@@ -49,13 +49,13 @@ CLI:
 REQUIREMENTS
 ------------
 - ffmpeg / ffprobe on PATH (system dependency)
-- numpy, opencv-python, scipy   (pip extras: agenticvbench[task6])
+- numpy, opencv-python, scipy   (pip extras: agenticvbench[repair])
 - the kit's `lib/` directory (already vendored alongside this file)
 
 SOURCE VIDEO ACCESS
 -------------------
 The source.mp4 is hosted alongside the dataset at
-``Anonymous47621123/AgentVBench_100`` under each task_6 cell (column
+``Anonymous47621123/AgentVBench_100`` under each repair cell (column
 ``verifier_reference_urls`` on the parquet — exactly one source per cell).
 Reviewers can download it ahead of time; the scorer expects it as a local
 path. To avoid leaking the answer to evaluated agents, the agent's runtime
@@ -83,7 +83,7 @@ if str(_LIB) not in sys.path:
 # Module-import-time check that the kit is present
 if not (_LIB / "rubrics" / "__init__.py").exists():
     raise ImportError(
-        f"task_6 kit missing — expected {_LIB / 'rubrics'} to exist. "
+        f"repair kit missing — expected {_LIB / 'rubrics'} to exist. "
         "Did you copy lib/ into the repo?"
     )
 
@@ -261,7 +261,7 @@ def score_task(
             localization_score=0.0, localization_max=35.0,
             edit_score=0.0, edit_max=60.0,
             final_score=0.0,
-            error=f"kit import failed (try `pip install agenticvbench[task6]`): {e}",
+            error=f"kit import failed (try `pip install agenticvbench[repair]`): {e}",
         )
 
     detail: dict[str, Any] = {}
@@ -336,8 +336,8 @@ def score_task(
 
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="avb-score-task-6",
-        description="Score one AgentVBench_100/task_6 broken-video repair solution.",
+        prog="avb-score-repair",
+        description="Score one AgentVBench_100/repair broken-video repair solution.",
     )
     p.add_argument("--fixed-mp4", required=True, type=Path,
                    help="path to the agent's fixed.mp4")

@@ -1,13 +1,13 @@
-# Adjusted final score — task_5 and task_7
+# Adjusted final score — sequencing and assembly
 
 The paper reports **`adjusted_final_score`** as the headline number for each
 of these two tasks. Both verifiers compute it alongside the raw
 `final_score` (left in for backwards compatibility); the paper's tables are
 the adjusted form.
 
-## task_7_3 — chance-floor rescale
+## assembly — chance-floor rescale
 
-The original `final_score` for task_7_3 is per-slot accuracy
+The original `final_score` for assembly is per-slot accuracy
 (`n_correct / n_slots`), which has a chance floor at `1/3` (slots typically
 have 3 candidates; random picking expectation = 1/3). We rescale so chance
 maps to 0 and perfect maps to 1, floored at 0:
@@ -25,7 +25,7 @@ adjusted_final_score = max(0, (final_score - 1/3) / (1 - 1/3))
 | 0.750 | 0.625 |
 | 1.000 | 1.000 |
 
-## task_5_4 — multiplicative composite
+## sequencing — multiplicative composite
 
 The original `final_score` is a weighted sum:
 `0.4 * nd_score + 0.3 * lis_score + 0.3 * adj_score`. We replace it with
@@ -53,13 +53,13 @@ Example: `nd_score=0.96, lis_score=0.90, adj_score=0.667`
 
 For a given (harness, model) on either task:
 
-1. Pick the task IDs in scope (e.g. all 28 of task_5_4 or all 18 of task_7_3).
+1. Pick the task IDs in scope (e.g. all 28 of sequencing or all 18 of assembly).
 2. For each task ID, look up `adjusted_final_score` from each of the `N` runs
    (we used N = 3).
 3. Treat missing runs as 0.
 4. Final number = mean over all `(N × tasks)` cells.
 
-Worked example for `codex_cli + gpt-5.5` on task_7_3, task IDs
+Worked example for `codex_cli + gpt-5.5` on assembly, task IDs
 `{1,2,4,5,6,7,9,10,11,12,13,14,15,18,19,20,22,24}`:
 
 - run1 mean over 18 task IDs: 0.3958

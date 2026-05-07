@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / task_7_3 — video assembly.
+"""Verifier for AgentVBench_100 / assembly — video assembly.
 
 Given:
   - the agent's `solution.json` (a manifest with a `segments` list, each entry
@@ -21,7 +21,7 @@ USAGE
 -----
 As a library:
 
-    from verifiers.task_7_video_assembly import score_task
+    from verifiers.assembly import score_task
     result = score_task(
         solution_json=Path("solution.json"),
         correct_assembly=["3.mp4", "7.mp4", "5.mp4", "11.mp4"],
@@ -30,7 +30,7 @@ As a library:
 
 CLI:
 
-    python -m verifiers.task_7_video_assembly.score \
+    python -m verifiers.assembly.score \
         --solution-json path/to/solution.json \
         --task-id 1 \
         --dataset Anonymous47621123/AgentVBench_100
@@ -127,7 +127,7 @@ def score_task(
     correct_assembly: Iterable[str],
     task_id: int | str = "",
 ) -> AdjustedResult:
-    """Score one task_7_3 instance.
+    """Score one assembly instance.
 
     Parameters
     ----------
@@ -203,7 +203,7 @@ def _load_correct_assembly_from_dataset(dataset: str, task_id: int | str) -> lis
         tbl = pq.read_table(candidate, columns=["task_id", "correct_assembly_in_slot_order"])
     else:
         from datasets import load_dataset
-        ds = load_dataset(dataset, "task_7_3", split="train")
+        ds = load_dataset(dataset, "assembly", split="train")
         for row in ds:
             if str(row["task_id"]) == str(task_id):
                 return [str(x) for x in row["correct_assembly_in_slot_order"]]
@@ -220,13 +220,13 @@ def _load_correct_assembly_from_dataset(dataset: str, task_id: int | str) -> lis
 
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="avb-score-task-7",
-        description="Score one AgentVBench_100/task_7_3 video-assembly solution.",
+        prog="avb-score-assembly",
+        description="Score one AgentVBench_100/assembly video-assembly solution.",
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
     p.add_argument("--task-id", required=True,
-                   help="task_id within task_7_3 (one of 1, 2, 4, 5, 6, 7, 9, "
+                   help="task_id within assembly (one of 1, 2, 4, 5, 6, 7, 9, "
                         "10, 11, 12, 13, 14, 15, 18, 19, 20, 22, 24)")
     p.add_argument("--dataset", default="Anonymous47621123/AgentVBench_100",
                    help="HF dataset id (default: Anonymous47621123/AgentVBench_100), "

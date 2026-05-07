@@ -1,6 +1,6 @@
-# task_5 — video ordering
+# sequencing — video ordering
 
-Each task in `task_5_4` gives the agent N video clips (named `1.mp4`,
+Each task in `sequencing` gives the agent N video clips (named `1.mp4`,
 `2.mp4`, …, `N.mp4`) that are the shots of a single chapter from a short
 film, renamed and shuffled. The agent reassembles them into the original
 narrative order and writes a manifest (`solution.json`) listing the picked
@@ -31,7 +31,7 @@ clip-set, every component is 0.
 ## Files
 
 ```
-task_5_video_order/
+sequencing/
 ├── score.py    public entry point + CLI + metric implementations
 └── README.md
 ```
@@ -42,7 +42,7 @@ calls, no system deps.
 ## Score one task
 
 ```bash
-avb-score-task-5 \
+avb-score-sequencing \
     --solution-json path/to/agent_output/solution.json \
     --task-id 2
 ```
@@ -50,7 +50,7 @@ avb-score-task-5 \
 Or pass the correct order inline (no dataset access):
 
 ```bash
-avb-score-task-5 \
+avb-score-sequencing \
     --solution-json path/to/agent_output/solution.json \
     --task-id 2 \
     --correct-order "6,5,1,2,3,9,4,8,7,10"
@@ -59,7 +59,7 @@ avb-score-task-5 \
 Programmatic:
 
 ```python
-from verifiers.task_5_video_order import score_task
+from verifiers.sequencing import score_task
 
 result = score_task(
     solution_json="path/to/solution.json",

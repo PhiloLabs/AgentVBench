@@ -1,4 +1,4 @@
-"""Verifier for AgentVBench_100 / task_5_4 — video ordering.
+"""Verifier for AgentVBench_100 / sequencing — video ordering.
 
 Given:
   - the agent's `solution.json` (a manifest with a `segments` list, each entry
@@ -25,7 +25,7 @@ USAGE
 -----
 As a library:
 
-    from verifiers.task_5_video_order import score_task
+    from verifiers.sequencing import score_task
     result = score_task(
         solution_json=Path("solution.json"),    # the agent's manifest
         correct_order=["6","5","1","2","3"],    # from the dataset's correct_order
@@ -34,7 +34,7 @@ As a library:
 
 CLI:
 
-    python -m verifiers.task_5_video_order.score \
+    python -m verifiers.sequencing.score \
         --solution-json path/to/solution.json \
         --task-id 2 \
         --dataset Anonymous47621123/AgentVBench_100  # or a local parquet path
@@ -156,7 +156,7 @@ def score_task(
     correct_order: Iterable[str],
     task_id: int | str = "",
 ) -> AdjustedResult:
-    """Score one task_5_4 instance.
+    """Score one sequencing instance.
 
     Parameters
     ----------
@@ -242,7 +242,7 @@ def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[s
     else:
         # HF hub id — load via `datasets` and the relevant config
         from datasets import load_dataset
-        ds = load_dataset(dataset, "task_5_4", split="train")
+        ds = load_dataset(dataset, "sequencing", split="train")
         tbl = None
         for row in ds:
             if str(row["task_id"]) == str(task_id):
@@ -260,13 +260,13 @@ def _load_correct_order_from_dataset(dataset: str, task_id: int | str) -> list[s
 
 def cli(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="avb-score-task-5",
-        description="Score one AgentVBench_100/task_5_4 video-ordering solution.",
+        prog="avb-score-sequencing",
+        description="Score one AgentVBench_100/sequencing video-ordering solution.",
     )
     p.add_argument("--solution-json", required=True, type=Path,
                    help="path to the agent's solution.json")
     p.add_argument("--task-id", required=True,
-                   help="task_id within task_5_4 (1..28)")
+                   help="task_id within sequencing (1..28)")
     p.add_argument("--dataset", default="Anonymous47621123/AgentVBench_100",
                    help="HF dataset id (default: Anonymous47621123/AgentVBench_100), "
                         "or a local parquet/dir path")

@@ -26,11 +26,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# task_4 cutbench requires the Gemini File API for LLM-judge rubric items
-task4 = ["google-genai>=0.3"]
-# task_6 video repair uses ffprobe via subprocess; OpenCV/SciPy used by some
+# recap requires the Gemini File API for LLM-judge rubric items
+recap = ["google-genai>=0.3"]
+# repair uses ffprobe via subprocess; OpenCV/SciPy used by some
 # of the kit's signal-processing rubrics (xcorr, SSIM)
-task6 = ["numpy>=1.24", "opencv-python>=4.8", "scipy>=1.11"]
+repair = ["numpy>=1.24", "opencv-python>=4.8", "scipy>=1.11"]
 all = [
   "google-genai>=0.3",
   "numpy>=1.24",
@@ -39,10 +39,10 @@ all = [
 ]
 
 [project.scripts]
-avb-score-task-5 = "verifiers.task_5_video_order.score:cli"
-avb-score-task-7 = "verifiers.task_7_video_assembly.score:cli"
-avb-score-task-4 = "verifiers.task_4_cutbench.score:cli"
-avb-score-task-6 = "verifiers.task_6_video_repair.score:cli"
+avb-score-sequencing = "verifiers.sequencing.score:cli"
+avb-score-assembly = "verifiers.assembly.score:cli"
+avb-score-recap = "verifiers.recap.score:cli"
+avb-score-repair = "verifiers.repair.score:cli"
 
 [tool.setuptools.packages.find]
 where = ["."]

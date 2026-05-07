@@ -1,6 +1,6 @@
-# task_4 — cutbench creative-recap scoring
+# recap — creative-recap scoring
 
-Each task in `task_4_2` asks an agent to cut a short creative recap of a film
+Each task in `recap` asks an agent to cut a short creative recap of a film
 or broadcast to a brief written by a domain expert. The agent's `final.mp4`
 is graded against ~28 expert-authored rubric items, each one a yes/no check
 authored alongside the brief.
@@ -31,7 +31,7 @@ Final score:
 final_score = sum(passed × weight) / sum(positive_weights),  clamped to [0, 1]
 ```
 
-There is **no separate adjusted form** for task_4 — `final_score` is what
+There is **no separate adjusted form** for recap — `final_score` is what
 the paper reports.
 
 ## Pillars
@@ -43,7 +43,7 @@ but the headline `final_score` is computed across all items.
 ## Files
 
 ```
-task_4_cutbench/
+recap/
 ├── score.py        public entry point + CLI
 ├── kinds.py        Python-dispatch checks (ffprobe, scenedetect, OCR, …)
 ├── llm_judges.py   Gemini File API integration for `llm` and `compound` dispatches
@@ -53,14 +53,14 @@ task_4_cutbench/
 ## Requirements
 
 - ffmpeg / ffprobe on PATH (system dep — `brew install ffmpeg` or apt)
-- `pip install agenticvbench[task4]` — adds `google-genai` for the Gemini
+- `pip install agenticvbench[recap]` — adds `google-genai` for the Gemini
   File API
 - `GEMINI_API_KEY` env var — get one at <https://aistudio.google.com/apikey>
 
 ## Score one task
 
 ```bash
-avb-score-task-4 \
+avb-score-recap \
     --final-mp4 path/to/agent_output/final.mp4 \
     --task-id cutbench-animated_out
 ```
@@ -68,10 +68,10 @@ avb-score-task-4 \
 Programmatic:
 
 ```python
-from verifiers.task_4_cutbench import score_task
+from verifiers.recap import score_task
 from datasets import load_dataset
 
-ds = load_dataset("Anonymous47621123/AgentVBench_100", "task_4_2", split="train")
+ds = load_dataset("Anonymous47621123/AgentVBench_100", "recap", split="train")
 row = next(r for r in ds if r["task_id"] == "cutbench-animated_out")
 result = score_task(
     final_mp4="path/to/final.mp4",

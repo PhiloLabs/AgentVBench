@@ -4,7 +4,7 @@ Each kind is a deterministic check: takes a video path + params, returns
 (passed: bool, evidence: str). No LLM calls.
 
 Usage:
-    from verifiers.cutbench.kinds import run_kind
+    from verifiers.recap.kinds import run_kind
     passed, evidence = run_kind("ffprobe_duration_range",
                                 video_path="/tmp/final.mp4",
                                 params={"min": 59.9, "max": 60.1})
